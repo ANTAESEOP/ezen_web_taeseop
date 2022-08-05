@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<!-- 
+		조건문 [ if , switch ]
+			예) 동생에게 a,b,c편의점에서 1000 콜라 사오기 심부름
+				a편의점간다 -> 콜라가 1000 이하이면 -> 구매
+				아니면
+				b편의점간다 -> 콜라가 1000 이하이면 -> 구매
+				아니면
+				c편의점간다 -> 콜라가 1000이하이면 -> 구매
+				아니면 집에 간다.
+			코드화)
+				if ( a편의점 <= 1000 ) { 콜라구매하고 집간다. }
+				else if ( b편의점 <= 1000 ) { 콜라구매하고 집간다.}
+				else if ( c편의점 <= 1000 ) { 콜라구매하고 집간다.}
+				else { 집간다. }
+								   vs
+				if ( a편의점 <= 1000 ) { 콜라구매하고 집간다. }
+				if ( b편의점 <= 1000 ) { 콜라구매하고 집간다.}
+				if ( c편의점 <= 1000 ) { 콜라구매하고 집간다.}
+				else { 집간다. }
+				
+				
+	 if 형태
+	 	1. if ( 조건 ) {
+	 			(조건창일때)실행문
+	 	}
+	 	2. if ( 조건 ) {
+	 			 (참=true)실행문
+	 	}
+	 	else{
+	 		 (거짓=false)실행문
+	 		 }
+	 		 
+	 	3. if 중첩
+	 		if( 조건 ) {
+	 		
+	 		}else{
+	 		
+	 		}
+	 	{else{
+	 		if ( 조건 ) {
+	 		}else{
+	 		
+	 		}	 		 
+	 	
+	 	4. if ~ else if ~ else
+	 		if( 조건1 ) { 참1실행 }
+	 		else if ( 조건2 ) { 참2실행 }
+	 		else if ( 조건3 ) { 참3실행 }
+	 		else if ( 조건4 ) { 참4실행 }
+	 		else { 거짓실행 }
+	 	
+	 	
+	 	
+	 -->
+
+
+			 <script type="text/javascript">
+			 // p.131
+			 if ( 273 < 100 ) {//if s
+					alert('273<100 -> true ') 	// 예상[100이 더 작기 떄문에 실행이 안된다.]	 
+			 } // if e
+			
+			 alert('종료')
+			 // p.132
+			 const date = new Date() 			// Date클래스로 date객체 선언 [ Date 날짜 관련 클래스] 
+			 const hour = date.getHours() 		// date객체에서 '시' 만 호출해서 hour 상수에 저장
+			 //확인
+			 alert('현재날짜 : + date ')
+			 alert('현재 시 : + hour ')
+			 
+			 	if ( hour < 12){
+				 alert('오전입니다.')
+			 } // if e
+			 	if ( hour >= 12){ //if s
+				 alert('오후입니다.')
+			 } // if e
+			 // 2. if~else 사용했을때
+			 	if( hour < 12){
+			 	 alert('오전입니다.')
+			 	}
+			 	
+			 
+			 // p.135
+			 	if( hour < 11){			// 1.만약에 시간이 11보다 작으면 아침 먹자
+			 		alert('아침 먹을 시간입니다.')
+			 	}else{				// 1. 아니면
+	 					if( hour < 15 ){// 2. 만약에 시간이 15보다 작으면 점심먹자
+	 						alert('점심 먹을 시간입니다.')
+	 					}else{			// 2. 아니면
+	 					 	alert('저녁 먹을 시간입니다.')
+	 				 }
+	 					} //if end
+			 
+	 		// p.137
+	 		// 3. if ~ else if
+	 			if ( hour < 11){
+	 				alert('아침 먹을 시간입니다.')
+	 			}else if ( hour < 15){
+	 				alert('점심 먹을 시간입니다.')
+	 			}else{
+	 				alert('점심 먹을 시간입니다.')	
+	 			}
+			 
+	 		
+	 		// p.139 확인문제
+	 		// 1.  3
+	 		// 2. Number Number a>b or a==b
+	 		// 3. && : and 연산자
+			// 4.
+			const a = Number(prompt('숫자를 입력해주세요.', ''))
+			// 만약에 입력받은 값이 0보다 크면
+			if ( a > 0 ){ alert('입력한 숫자는 양수 입니다') }
+			else if ( a === 0 ){ alert('입력한 숫자는 0 입니다.') }
+			else{ alert('입력한 숫자는 음수 입니다. ') }
+	 		// 5.
+	 		const c = Number( prompt('숫자 입력 : ') )
+	 		// 만약에 입력받은 수가 짝수이면
+	 		if( c % 2 == 0 ) { alert('짝수입니다.') }
+	 		else { alert('홀수입니다.' ) }
+	 		
+			//6.
+			const b = Number( prompt('월욜 입력 : ' ) )
+			if( b >= 3 && b<= 5 ){ // 3월부터 5월까지 봄
+				alert('봄 입니다.')
+			}else if ( b >=6 && b<=8 ){
+				alert('여름입니다.')
+			}else if ( b >=9 && b<=11 ){
+				alert('가을입니다.')
+			}else{
+					alert('가을입니다')	
+				}
+			 
+ </script>
+
+</body>
+</html>
