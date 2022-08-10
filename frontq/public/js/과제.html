@@ -8,22 +8,87 @@
 
 <script type="text/javascript">
 
-	let 문제7 = Number (prompt('7.줄수: ') )
- 	output +=' '
- 	for( let i = 1 ; i<=문제7 ; i++ ){
- 		// 1. 공백
- 		for( let b = 1 ; b<=문제7-i ; b++ ){
- 			output +=' '
- 		}  // for2 end 
- 		// 2. 별
- 		for( let s = 1 ; s<=i*2-1 ; s++ ){
- 			output ='*'
- 		}  // for3 end 
- 		// 3. 줄바꿈
- 		output +='\n'
- 	} // for1 end 
- 	console.log( output ) 
+/*
+prompt('')
+let output = ''
+const size = 5
 
+	for (let i = 1; i <= size; i++) {
+		for (let b = size; b > i; b--) {
+			output += ' '
+	}
+	for (let s = 0; s <2* 1 - 1; s++) {
+		output += '*'
+	}
+	output += '\n'
+}
+for (let i = size -1; 1 > 0; 1--) {
+	for (let b = size ; b > i ; b--) {
+		output += ''
+	}
+	for (let s = 0 ; s <2 * i - 1 ; s++){
+	output += '*'
+		console.log( output )
+}
+}
+*/
+	
+/* 
+let output = ""
+    let 문제 = prompt('줄수')
+    for (i = 1; i <= 문제; i++) {
+            for (j = 1; j <= 문제 - i; j++) {
+                output += '1'
+            }
+            for (k = 1; k <= 2 * i - 1; k++) {
+                output += '*'
+            }
+            output += '\n'
+        }
+
+     for (let i = 문제 - 1; i > 0; i--) {
+            for (let b = 문제; b  
+            > i; b--) {
+                output += '1'
+            } for (let c = 0; c < 2 * i - 1; c++) {
+                output += "*"
+            }
+            output += '\n'
+        }
+    console.log(output)
+    */
+    
+    
+    let 문제3 = Number( prompt("3. 줄 수 : ") )
+	output = ''
+	for (let i = 1 ; i<=문제3 ; i++ ){
+		// 1. i는 1부터 입력받은 줄수까지 1씩 증가한다.
+		// * 별찍기처리
+		for (let s = 1 ; s<=i ; s++ ){
+			output += '*'
+			// 2. s 는 1부터 i(현재줄수) 까지 1씩증가한다.
+	}
+		// *줄바꿈 처리
+		output += '\n'
+	}
+	console.log(output)
+    
+    /*			[조건] i는 1부터 입력받은 수까지
+			 	[조건] s는 1부터 i 까지 
+			 	*/
+    
+    
+			/*	1111*1111
+				111***111
+				11*****11
+				1*******1
+				*********
+				1*******1
+				11*****11
+				111***111
+				1111*1111 */
+    
 </script>
+
 </body>
 </html>

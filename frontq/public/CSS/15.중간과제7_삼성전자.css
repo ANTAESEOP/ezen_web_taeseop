@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+*{ border:  solid 1px red; }
+
+.ss_too{background-color: green;}
+		 
+.ss_top_menu1{width: 150px; height: 20px;
+			 float: both;
+}			 
+.ss_top_menu3{width: 150px; height: 20px;
+			 float: left;
+}
+.ss_top_menu4{width: 150px; height: 20px;
+			 float: left;
+}			 
+.ss_top_menu5{width: 150px; height: 20px;
+			 float: left;
+}			 
+.ss_top_menu6{width: 150px; height: 20px;
+			 float: left;
+}
+.ss_logo {background-color:white; font-size: 50px;
+          width: 1920px; height: 500px;
+          text-align: center;
+}

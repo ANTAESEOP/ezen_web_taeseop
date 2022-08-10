@@ -20,7 +20,7 @@
 
 h3 { text-align: center; } 			/*(내용) 가운데정렬*/
 
-.signupbox{
+	.signupbox{
 	margin : 0 auto; 				/* (박스) 가로 길이 */
 	width : 800px;  				/* (박스) 가운데 정렬 */
 	border-top : solid 2px red; 	/* (박스) 윗쪽 테두리 */
