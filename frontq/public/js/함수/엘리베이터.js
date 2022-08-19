@@ -11,7 +11,7 @@ function count(type)  {
   }else if(type === 'minus')  {
     number = parseInt(number) - 1;
   }
-  
+
   // 결과 출력
   resultElement.innerText = number;
 }
