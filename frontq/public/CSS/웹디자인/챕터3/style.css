@@ -1,0 +1,97 @@
+@charset "UTF-8";
+
+.post_title{
+	padding-bottom: 10px; /* 아래 양쪽 여백 */
+	
+	/* 배경 그라이데이션 : linear-gradient : 선형그라데이션 */
+	background-image: linear-gradient(45deg, #fff 30%, #ccc 30%, #ccc 50%, #fff 50%, #fff
+80%, #ccc 80%, #ccc 100%);
+	background-size: 6px 6px;
+	margin-bottom: 1.5rem;
+}
+.post_title h2{
+	background-color: #ffffff;
+	padding: 0 0.5rem .875rem;
+	font-size: 1.5rem; /*폰트 사이즈*/
+	font-family: '굴림'; /* 폰트 */
+	font-weight: 500; /*폰트 굵기*/
+	line-height: 1.5; /* 줄 간격 */
+}
+.post_title a{
+	color: #949087;
+	text-decoration: none; /* 링크 밑줄 제거 */
+}
+/*---------------------------------------------*/
+.post_img{
+	width: 100%;
+	height: 260px; /* 고정 높이 -> 비율이 깨짐 */
+	object-fit: cover;
+	border-radius: 40% 70% 50% 30% / 50%;
+				/*각각의 가로 		/ 세로: 50% 통일 */
+}
+.post_thum{
+	position: relative;
+}
+/*-----------------------------------------------*/
+.btn a{
+	color: #fff; /*글자색*/
+	padding : 10px 20px; /*안쪽여백 : 가로 세로 */
+	background-color: #eda1a1; /* 배경색 */
+	
+	/*그림자 : 1.box-shadow 2. text-shadow */
+	box-shadow: 0 0 0 5px #eda1a1;
+					/* x축 , y축 , 그림정도 , 확대/축소 정도 , 색상 */ 
+	border: 2px dashed #e38787;
+	border-radius: 5px;
+	text-decoration: none;
+	display: inline-block;
+}
+.btn a:hover{ /* 마우스 올렸을때 */
+	color: #fff;
+	background-color: e38787;
+	box-shadow: 0 0 0 5px #e38787;
+	border: 2px dashed #eda1a1;
+}
+/*------------------ 가상 요소로 글머리 만들기 --------------------*/
+.article ul li::before {
+	content: '';
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background-color: #93d8d0;
+	display: inline-block;
+	margin: 0 8px 2px 0;
+}
+/* 미디어쿼리 : 디바이스 크기에 따라 css 설정 */
+@media(min-width : 600px) {
+	.container{
+		display: flex;
+		justify-content: space-between; /* 양쪽 배치 */
+	}
+	main{
+		width: 68%;
+	}
+	aside{
+		width: 26%;
+	}
+	.post_img{ /* 이미지 고정 사이즈 -> 비율이 깨짐 */
+		width: 220px;
+		height: 180px;
+	}
+	.post_thumb{
+		margin: 0 3rem 1rem 0;
+		shape-outside: circle();
+		float: left;
+	}
+	/*
+		min-width : 600px; : 최소 가로사이즈 600px
+		[ 600px 이상에서 사용되는 css ]
+		
+		max-width : 600px; : 최대 가로사이즈 600px
+		[ 600px 이하에서 사용되는 css ]
+		
+		min-height : 600px; : 최소 세로사이즈
+		max-height : 600px; : 최대 세로사이즈
+		
+	*/	
+}
