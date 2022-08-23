@@ -1,0 +1,8 @@
+@charset "UTF-8";
+
+ul li::before {
+	/* html에 없는 css에서 요소 만들기*/
+	content: '\f004';
+	font-family: "Font Awesome 5 Pro";
+	color: #f66;
+}
