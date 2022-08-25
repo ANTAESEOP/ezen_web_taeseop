@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+header{
+	width: 900px;
+	height: 1200px;
+	border: solid 1px red;
+}
+
+
+
+#test{float:left;
+	text-align: center;}
