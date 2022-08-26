@@ -156,6 +156,10 @@ article ol li::before {
 		shape-outside: circle();
 		float: left;
 	}
+	.popular-posts {
+		position: sticky;
+		top: 1ram;
+	}
 	/*
 		min-width : 600px; : 최소 가로사이즈 600px
 		[ 600px 이상에서 사용되는 css ]
@@ -166,7 +170,7 @@ article ol li::before {
 		min-height : 600px; : 최소 세로사이즈
 		max-height : 600px; : 최대 세로사이즈
 		
-	*/	
+	*/
 }
 
 .bgbox{
@@ -242,7 +246,29 @@ article ol li::before {
 	font-size:  1.5rem;
 	color: #949087;
 }
-
+/*---------------------------------------------------------------*/
+footer {
+	background-color: #949087;
+	text-align: center;
+	padding: 3rem; 
+}
+footer ul {
+	display : flex;
+	justify-content: center;
+	margin-bottom: 2rem;
+}
+footer li {
+	margin: 0 12 px;
+}
+footer a {
+	color: #ffffff;
+}
+footer a:hover {
+	color: #c7c3ba;
+}
+footer small {
+	color:#c7c3ba; font-size: .875rem;
+}
 
 
 
