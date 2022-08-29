@@ -1,8 +1,8 @@
 @charset "UTF-8";
 
 .container{
-	width: 1200px;
-	height: 1200px;
+	width: 1800px;
+	height: 1440px;
 	margin: 0 auto;
 	border: solid 1px red;
 	margin-top: 120px;
@@ -13,19 +13,55 @@ header{
 	height: 300px;
 	margin-bottom: 15px;
 }
-.heart1 , .heart2 , .heart3 , .ggim{
-	width: 140px;
-	height: 130px;
+nav{
+	height: 170px;
+	margin-bottom: 25px;
+}
+section{
+	height: 300px;
+}
+/*----------------------------- 찜목록 -----------------------------*/
+
+.heart_main{
+	width: 83px;
+    height: 170px;
+    border: solid 1px black;
+    display: inline-block;
+}
+.heart1 , .heart2 , .heart3 , .heart4{
+	width: 269px;
+	height: 170px;
+	border: solid 1px black;
+	display: inline-block;
+/*-----------------------------애니매이션-----------------------------*/
+}
+.animation1 , .animation2 , .animation3 , .animation4{
+	width: 292px;
+	height: 250px;
 	border: solid 1px black;
 	display: inline-block;
 }
-/*-------------------------------------------------------*/
+/*----------------------------- 코미디 -----------------------------*/
+.comedy1 , .comedy2 , .comedy3 , .comedy4{
+	width: 292px;
+	height: 250px;
+	border: solid 1px black;
+	display: inline-block;
+}
+/*----------------------------- SF -----------------------------*/
+.sf1 , .sf2 , .sf3 , .sf4{
+	width: 292px;
+	height: 250px;
+	border: solid 1px black;
+	display: inline-block;
+}
+/*-----------------------------헤더메인이미지------------------------*/
 
 .img{
 	width: 293px;
 	height: 300px;
 	display: inline-block;
-	border: solid 1px red;
+	border: solid white;
 }
 
 .image {
@@ -59,13 +95,29 @@ header{
     display: inline-block;
 }
 
-section{
-	height: 130px;
-	border: 1px solid black;
-}
-
 .movie_img{
 	width: 140px;
-	height: 249px;
-	border: 1px solid red;
+	height: 301px;
+	margin-bottom: 10px;
+	border: 1px solid black;
 }
+/*-----------------------------  -----------------------------*/
+
+.test{
+    padding: 50px;
+    border: 1px solid black;
+    padding-bottom: 173px;
+    background-size: 100%;
+    margin: 40px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.test1{
+    padding: 50px;
+    border: 1px solid black;
+    padding-bottom: 105px;
+    background-size: 100%;
+    margin: 5px;
+}
+
