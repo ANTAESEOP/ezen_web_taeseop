@@ -71,7 +71,11 @@ nav{text-align: center;}
     height: 170px;
     border: solid 1px white;
     display: inline-block;
-    border-radius: 25px;}
+    border-radius: 25px;
+    background-image: url(img/12.jpg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;}
 .heart1 , .heart2 , .heart3 , .heart4{
 	width: 269px;
 	height: 170px;

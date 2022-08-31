@@ -1,0 +1,321 @@
+
+@charset "UTF-8";
+*{box-sizing: border-box;background-color: black; color: white; }
+a{text-decoration: none;}
+li{
+   list-style: none;
+   margin-bottom: 2rem;
+}
+p{font-size: 1.5rem; padding-left: 1.5rem;}
+span{
+   font-size: 1.5rem
+}
+.logo img{
+   width: 110%;
+   height: 100%;
+}
+.container{
+   width: 1500px;
+   margin: 0 auto;
+   height: 1700px;
+}
+.headerbox{
+   position: relative;
+   display: flex;
+   justify-content: space-between;
+   height: 10%;
+   border-bottom: 2px solid #eee;
+}
+
+.login{
+   padding: 50px 20px;
+   font-size: 20px;
+   
+}
+/* ----------------------헤더----------------------------- */
+.menu{float: left; width: 250px; height: 90%;border-right: solid #eee 3px; margin: 2rem 2rem 0 0;}
+.menu_list{height: 90%; font-size: 20px;}
+.menu_list a:hover{background-color: #eeeeee; color: black;   }
+/* ------------------------------------------------메뉴-------------------------- */
+
+.img1 {
+    /* margin: 0 auto; */
+    width: 200px;
+    display: flex;
+    margin-left: 44%;
+}
+#hd {
+    box-sizing: border-box;
+    width: 60%;
+    border-radius: 10px;
+    display: inline-block;
+    background-color: gray;
+   margin: 40px;
+}
+
+.cols{
+	width: 600px;
+	background-color: transparent;
+	margin: 50px auto;
+	
+	}
+.cols2 input {
+    width: 60%;
+    height: 25px;
+   outline:none;
+    text-decoration: none;
+    border: 0 none;
+    margin-top: 10px;
+    background-color: transparent;
+    color: black;
+}
+.cols2{
+	border: 1px solid black;
+	width: 500px;
+	text-align: left;
+	height: 50px;
+	border-radius: 5px;
+	margin: 10px;
+	background-color: white;
+}
+.cols button {
+    float: right;
+    margin: 10px;
+    background-color: #A0A0A0;
+}
+
+
+/* ---------------------------------------------- */
+
+section {
+    margin: 0 auto;
+    width: 800px;
+
+    border-radius: 5px;
+}
+
+.체크박스 ,h3 ,.약관 ,h2{
+	background-color: transparent;
+	text-align: center;
+}
+
+.약관{box-sizing:border-box;
+			clear: both;
+			width: 100%;
+			height: 100px;
+			display: block;
+			background-color: #2d2727;
+}
+#buttom{
+	width: 300px;
+	background-color :teal;
+	
+	box-sizing: border-box;
+	border-radius: 5px;
+	margin: 0 auto;
+	
+}
+.next{
+	width: 300px;
+	border: 1px solid #00000040;
+	box-sizing: border-box;
+	border-radius: 5px;
+	margin: 0 auto;
+	height: 50px;
+	text-align: center;
+	background-color: #1f8b63;
+}
+
+
+
+
+
+/* -------------------------------본문-------------------------------- */
+
+
+footer{
+   clear: both;
+   display: flex;
+   justify-content: center;
+   height: 10%;
+   border-top: solid 3px #eee;
+   
+   
+   
+   
+}
+.info ,.tos{padding: 50px 20px;}
+
+
+/* ----------------------------푸터---------------------------- */
+
+
+
+
+
+
+
+
+
+
+/* @charset "UTF-8";
+*{box-sizing: border-box;background-color:black; color: white; }
+a{text-decoration: none;
+background-color: transparent;
+}
+ul a{
+	border-bottom: 1px solid red;
+}
+li{
+	list-style: none;
+	margin-bottom: 2rem;
+}
+p{font-size: 1.5rem;
+background-color: gray;
+}
+.container{
+	width: 1500px;
+	margin: 0 auto;
+	height: 1000px;
+}
+.headerbox{
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	height: 10%;
+}
+
+.menu{
+	float: left; width: 250px; height: 85%;
+	border: solid gray 3px; 
+}
+
+
+.menu_list a:hover{
+	background-color: #eeeeee;
+	color: black;
+	
+}
+.main_content{
+	 display: flex; flex-direction: column; 
+}
+
+.main_content{
+	float: right; width: 1200px; height: 80%; display: flex; flex-direction: column; justify-content: space-between; 
+}
+
+.b1{
+	display: flex;
+}
+-------------------------------------------
+
+a:hover{
+	color: white;
+	text-decoration: none;
+}
+#hd {
+    box-sizing: border-box;
+    width: 60%;
+    border-radius: 10px;
+    display: inline-block;
+    background-color: #b6a5a5;
+   
+    margin-left: 50px;
+}
+
+.cols{
+	width: 600px;
+	background-color: transparent;
+	margin: 20px auto;
+	
+	}
+.cols2 input {
+    width: 60%;
+    height: 25px;
+   outline:none;
+    text-decoration: none;
+    border: 0 none;
+    margin-top: 10px;
+    background-color: transparent;
+    color: black;
+}
+.cols2{
+	border: 1px solid black;
+	width: 500px;
+	text-align: left;
+	height: 50px;
+	border-radius: 5px;
+	margin: 10px;
+	background-color: white;
+}
+.cols button {
+    float: right;
+    margin: 10px;
+    background-color: #A0A0A0;
+}
+
+
+----------------------------------------------
+
+section{
+	
+	margin: 0 auto;
+	
+	width: 800px;
+	height:500px;
+	flex-direction:column-reverse;  
+	margin-top: 20px; 
+	
+	border-radius: 5px;
+}
+
+
+.체크박스 ,h3 ,.약관 ,h2{
+	background-color: transparent;
+	text-align: center;
+}
+
+.약관{box-sizing:border-box;
+			clear: both;
+			width: 100%;
+			height: 100px;
+			display: block;
+			background-color: gray;
+}
+#buttom{
+	width: 300px;
+	background-color :teal;
+	
+	box-sizing: border-box;
+	border-radius: 5px;
+	margin: 0 auto;
+	
+}
+.next{
+	width: 300px;
+	border: 1px solid #00000040;
+	box-sizing: border-box;
+	border-radius: 5px;
+	margin: 0 auto;
+	height: 50px;
+	text-align: center;
+	background-color: #1f8b63;
+}
+
+
+
+
+
+
+
+----------------------------------------------------
+
+footer{
+	display: flex;
+	justify-content: center;
+	height: 10%;
+	
+	
+	
+} */
+.info{margin: 0 12px;}
