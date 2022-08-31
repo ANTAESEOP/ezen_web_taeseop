@@ -1,45 +1,59 @@
 @charset "UTF-8";
-*{border: solid 1px red;box-sizing: border-box;background-color: black; color: white; }
+*{box-sizing: border-box;background-color: black; color: white; }
 a{text-decoration: none;}
-li{list-style: none;margin-bottom: 2rem;}
-p{font-size: 1.5rem;}
-.container{width: 1500px;margin: 0 auto;height: 1500px;}
-.headerbox{position: relative;display: flex;justify-content: space-between;height: 10%;}
-.login{padding: 50px 20px;}
-.menu{float: left; width: 250px; height: 80%;border: solid orange 3px; }
-.menu_list{height: 95%;}
-.menu_list a:hover{background-color: #eeeeee; color: black;	}
-.main_content{float: right; width: 1200px; height: 80%; display: flex; flex-direction: column; justify-content: space-between; }
-.posters{height: 60%; position: relative; display:flex;}
-.poster{position: absolute; width:40%; height: 100%; left: 30%}
-.popular{height: 20%;}
-.popbox{display: flex; justify-content: space-around;}
-.viewed{height: 20%}	
-footer{
-	clear: both;
-	display: flex;
-	justify-content: center;
-	height: 10%;}
-.info ,.tos{padding: 50px 20px;}
+li{
+	list-style: none;
+	margin-bottom: 2rem;
+}
 
-/* 태섭 css*/
-/* header start */
-header{text-align: center;}
+p{font-size: 1.5rem; padding-left: 1.5rem;}
+span{
+	font-size: 1.5rem
+}
+.logo img{
+	width: 110%;
+	height: 100%;
+}
+.container{
+	width: 1500px;
+	margin: 0 auto;
+	height: 1700px;
+}
+.headerbox{
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	height: 10%;
+	border-bottom: 2px solid #eee;
+}
+
+.login{
+	padding: 50px 20px;
+	font-size: 20px;
+	
+}
+/* ----------------------헤더----------------------------- */
+.menu{float: left; width: 250px; height: 75%;border-right: solid #eee 3px; margin: 2rem 2rem 0 0;}
+.menu_list{height: 90%; font-size: 20px;}
+.menu_list a:hover{background-color: #eeeeee; color: black;	}
+/* ------------------------------------------------메뉴-------------------------- */
+header{text-align: center; margin-top: 32px;}
 	.p1 {
 	    width: 393px;
 	    height: 298px;
-	    background-image: url(img2/popular/p1.jpg);
-	    background-size: contain;
+	    background-image: url(img/popular/p1.jpg);
+	    background-size: cover;
 	    background-repeat: no-repeat;
 	    background-position: center;
 	    border:1px solid white;
 	    display: inline-block;
-	    border-radius: 25px;}
+	    border-radius: 25px;
+	    }
 	.p2{
 	    width: 393px;
 	    height: 298px;
-	    background-image: url(img2/popular/p2.jpg);
-	    background-size: contain;
+	    background-image: url(img/popular/p2.jpg);
+	    background-size: cover;
 	    background-repeat: no-repeat;
 	    background-position: center;
 	    border:1px solid white;
@@ -48,8 +62,8 @@ header{text-align: center;}
 	.p3{
 	    width: 393px;
 	    height: 298px;
-	    background-image: url(img2/popular/p3.jpg);
-	    background-size: contain;
+	    background-image: url(img/popular/p3.jpg);
+	    background-size: cover;
 	    background-repeat: no-repeat;
 	    background-position: center;
 	    border:1px solid white;
@@ -71,25 +85,25 @@ nav{text-align: center;}
 	display: inline-block;
 	border-radius: 25px;}
 .h1{
-	background-image: url(img2/heart/h1.jpg);
+	background-image: url(img/heart/h1.jpg);
 	background-size: auto;
 	background-repeat: no-repeat;
 	background-position: center;
 	border-radius: 25px;}
 .h2{
-	background-image: url(img2/heart/h2.jpg);
+	background-image: url(img/heart/h2.jpg);
 	background-size: auto;
 	background-repeat: no-repeat;
 	background-position: center;
 	border-radius: 25px;}
 .h3{
-	background-image: url(img2/heart/h3.jpg);
+	background-image: url(img/heart/h3.jpg);
 	background-size: auto;
 	background-repeat: no-repeat;
 	background-position: center;
 	border-radius: 25px;}
 .h4{
-	background-image: url(img2/heart/h4.jpg);
+	background-image: url(img/heart/h4.jpg);
 	background-size: auto;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -104,29 +118,33 @@ section{text-align: center;}
 	display: inline-block;
 	border-radius: 25px;}
 	.a1{
-	background-image: url(img2/animation/a1.jpg);
+	background-image: url(img/animation/a1.jpg);
 	background-size: auto;
 	background-repeat: no-repeat;
 	background-position: center;
-	border-radius: 25px;}
+	border-radius: 25px;
+	background-position-x: right;}
 	.a2{
-	background-image: url(img2/animation/a2.jpg);
+	background-image: url(img/animation/a2.jpg);
 	background-size: auto;
 	background-repeat: no-repeat;
 	background-position: center;
-	border-radius: 25px;}	
+	border-radius: 25px;
+	background-position-x: right;}	
 	.a3{
-	background-image: url(img2/animation/a3.jpg);
+	background-image: url(img/animation/a3.jpg);
 	background-size: auto;
 	background-repeat: no-repeat;
 	background-position: center;
-	border-radius: 25px;}	
+	border-radius: 25px;
+	background-position-x: right;}	
 	.a4{
-	background-image: url(img2/animation/a4.jpg);
+	background-image: url(img/animation/a4.jpg);
 	background-size: auto;
 	background-repeat: no-repeat;
 	background-position: center;
-	border-radius: 25px;}
+	border-radius: 25px;
+	background-position-x: right;}
 /* animation end */
 /* comedy start */
 .comedy1 , .comedy2 , .comedy3 , .comedy4{
@@ -136,25 +154,26 @@ section{text-align: center;}
 	display: inline-block;
 	border-radius: 25px;}
 	.c1{
-	background-image: url(img2/comedy/c1.jpg);
+	background-image: url(img/comedy/c1.jpg);
 	background-size: auto;
 	background-repeat: no-repeat;
 	background-position: center;
 	border-radius: 25px;}
 	.c2{
-	background-image: url(img2/comedy/c2.jpg);
+	background-image: url(img/comedy/c2.jpg);
 	background-size: auto;
 	background-repeat: no-repeat;
 	background-position: center;
 	border-radius: 25px;}	
 	.c3{
-	background-image: url(img2/comedy/c3.jpg);
+	background-image: url(img/comedy/c3.jpg);
 	background-size: auto;
 	background-repeat: no-repeat;
 	background-position: center;
-	border-radius: 25px;}	
+	border-radius: 25px;
+	background-position-x: right;}	
 	.c4{
-	background-image: url(img2/comedy/c4.jpg);
+	background-image: url(img/comedy/c4.jpg);
 	background-size: auto;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -168,25 +187,28 @@ section{text-align: center;}
 	display: inline-block;
 	border-radius: 25px;}
 	.s1{
-	background-image: url(img2/SF/s1.jpg);
+	background-image: url(img/SF/s1.jpg);
 	background-size: auto;
 	background-repeat: no-repeat;
 	background-position: center;
-	border-radius: 25px;}
+	border-radius: 25px;
+	background-position-x: right;}
 	.s2{
-	background-image: url(img2/SF/s2.jpg);
+	background-image: url(img/SF/s2.jpg);
 	background-size: auto;
 	background-repeat: no-repeat;
 	background-position: center;
-	border-radius: 25px;}	
+	border-radius: 25px;
+	background-position-x: left;}	
 	.s3{
-	background-image: url(img2/SF/s3.jpg);
+	background-image: url(img/SF/s3.jpg);
 	background-size: auto;
 	background-repeat: no-repeat;
 	background-position: center;
-	border-radius: 25px;}	
+	border-radius: 25px;
+	background-position-x: right;}	
 	.s4{
-	background-image: url(img2/SF/s4.jpg);
+	background-image: url(img/SF/s4.jpg);
 	background-size: auto;
 	background-repeat: no-repeat;
 	background-position: center;	
@@ -237,3 +259,21 @@ section{text-align: center;}
 .p1:hover , .p2:hover , .p3:hover , .p4:hover{
   transform: scale(1.2);
 }
+/* -------------------------------본문-------------------------------- */
+
+
+footer{
+	clear: both;
+	display: flex;
+	justify-content: center;
+	height: 10%;
+	border-top: solid 3px #eee;
+	
+	
+	
+	
+}
+.info ,.tos{padding: 50px 20px;}
+
+
+/* ----------------------------푸터---------------------------- */
