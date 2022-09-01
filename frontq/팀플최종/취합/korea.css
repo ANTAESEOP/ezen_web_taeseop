@@ -1,0 +1,303 @@
+@charset "UTF-8";
+/*-------------------헤더---------------*/
+*{box-sizing: border-box;background-color: black; color: white; }
+a{text-decoration: none;}
+li{
+	list-style: none;
+	margin-bottom: 2rem;
+}
+p{font-size: 1.5rem;}
+
+.logo img{
+	width: 110%;
+	height: 100%;
+}
+.container{
+	width: 1500px;
+	margin: 0 auto;
+	height: 1500px;
+}
+.headerbox{
+	position: relative;
+	display: flex;
+	height: 10%;
+}
+
+.signup,.login{
+	padding: 50px 20px; position: absolute;
+}
+.login{right: 10%}
+.signup{right: 0;}
+
+.menu{
+	float: left; width: 250px; height: 80%;
+	border: solid white 3px; 
+}
+.menu_list{
+	height: 95%;
+}
+.menu_list a:hover{
+	background-color: #eeeeee;
+	color: black;
+	
+}
+
+
+/*-------메인 이미지 (포스터) -------------*/
+.main_content{
+	float: right; width: 1200px; height: 80%; display: flex; flex-direction: column; justify-content: space-between; 
+}
+.posters {
+    height: 20%;
+    position: relative;
+    display: flex;
+}
+
+.poster {
+    position: absolute;
+    width: 20%;
+    height: 100%;
+    left: 0%;
+    border: solid 1px white;
+	border-radius: 20%;
+}
+
+.poster1{
+	position: absolute;
+	width:20%;
+	height: 100%;
+	left: 50%;
+	border: solid 1px white;
+	border-radius: 20%;
+}
+.poster2{
+	position: absolute;
+	width:20%;
+	height: 100%;
+	left: 25%;
+	border: solid 1px white;
+	border-radius: 20%;
+}
+.poster3{
+	position: absolute;
+	width:20%;
+	height: 100%;
+	left: 75%;
+	border: solid 1px white;
+	border-radius: 20%;
+	
+}
+
+
+
+
+/*------찜 목록 페이지 ---------------*/
+.posters1 {
+    height: 15%;
+    position: relative;
+    display: flex;
+    bottom: 0%;
+}
+
+.poster4 {
+    position: absolute;
+    width: 10%;
+    height: 10%;
+    left: 0%;
+}
+
+.poster5{
+	position: absolute;
+	width:20%;
+	height: 100%;
+	left: 50%;
+	border: solid 1px white;
+	border-radius: 20%;
+	
+}
+.poster6{
+	position: absolute;
+	width:20%;
+	height: 100%;
+	left: 27%;
+	border: solid 1px white;
+	border-radius: 20%;
+	
+}
+.poster7{
+	position: absolute;
+	width:20%;
+	height: 100%;
+	left: 5%;
+	border: solid 1px white;
+	border-radius: 20%;
+	
+}
+.poster8{
+	position: absolute;
+	width:20%;
+	height: 100%;
+	left: 75%;
+	border: solid 1px white;
+	border-radius: 20%;
+	
+}
+
+/*------------- 코미디 박스 ----------------*/
+.posters2 {
+    height: 15%;
+    position: relative;
+    display: flex;
+    bottom: 0%
+}
+.poster9 {
+    position: absolute;
+    width: 10%;
+    height: 10%;
+    left: 0%;
+}
+.poster10{
+	position: absolute;
+	width:20%;
+	height: 100%;
+	left: 50%;
+	border: solid 1px white;
+	border-radius: 20%;
+	
+}
+.poster11{
+	position: absolute;
+	width:20%;
+	height: 100%;
+	left: 27%;
+	border: solid 1px white;
+	border-radius: 20%;
+	
+}
+.poster12{
+	position: absolute;
+	width:20%;
+	height: 100%;
+	left: 5%;
+	border: solid 1px white;
+	border-radius: 20%;
+	
+}
+.poster13{
+	position: absolute;
+	width:20%;
+	height: 100%;
+	left: 75%;
+	border: solid 1px white;
+	border-radius: 20%;
+}
+
+
+/*-------------시대극------------------*/
+.posters3 {
+    height: 15%;
+    position: relative;
+    display: flex;
+    bottom: 0%
+}
+.poster14 {
+    position: absolute;
+    width: 10%;
+    height: 10%;
+    left: 0%;
+}
+.poster15{
+	position: absolute;
+	width:20%;
+	height: 100%;
+	left: 50%;
+	border: solid 1px white;
+	border-radius: 20%;
+}
+.poster16{
+	position: absolute;
+	width:20%;
+	height: 100%;
+	left: 27%;
+	border: solid 1px white;
+	border-radius: 20%;
+}
+.poster17{
+	position: absolute;
+	width:20%;
+	height: 100%;
+	left: 5%;
+	border: solid 1px white;
+	border-radius: 20%;
+}
+.poster18{
+	position: absolute;
+	width:20%;
+	height: 100%;
+	left: 75%;
+	border: solid 1px white;
+	border-radius: 20%;
+}
+/*----------------외도---------------*/
+.posters4 {
+    height: 15%;
+    position: relative;
+    display: flex;
+    bottom: 0%
+}
+.poster19 {
+    position: absolute;
+    width: 10%;
+    height: 10%;
+    left: 0%;
+}
+
+.poster20{
+	position: absolute;
+	width:20%;
+	height: 100%;
+	left: 50%;
+	border: solid 1px white;
+	border-radius: 20%;
+}
+.poster21{
+	position: absolute;
+	width:20%;
+	height: 100%;
+	left: 27%;
+	border: solid 1px white;
+	border-radius: 20%;
+}
+.poster22{
+	position: absolute;
+	width:20%;
+	height: 100%;
+	left: 5%;
+	border: solid 1px white;
+	border-radius: 20%;
+}
+.poster23{
+	position: absolute;
+	width:20%;
+	height: 100%;
+	left: 75%;
+	border: solid 1px white;
+	border-radius: 20%;
+}
+
+/*---------푸터---------------*/
+footer {
+    clear: both;
+    display: flex;
+    justify-content: center;
+    height: 10%;
+}
+.info, .tos {
+    padding: 50px 20px;
+}
+* {
+    border: solid 1px black;
+    box-sizing: border-box;
+    background-color: black;
+    color: white;
+}
