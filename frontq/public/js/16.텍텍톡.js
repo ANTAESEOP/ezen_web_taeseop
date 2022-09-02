@@ -21,7 +21,7 @@ function 게임판그리기(){
 function 버튼선택 ( i ){
 		
 		if( 중복검사( i ) ){
-				alert('안내 ) 이미 둔 자리 입니다' + 승리)
+				alert('안내 ) 이미 둔 자리 입니다' + 승리) 
 				return // 함수 강제 종료
 		} // if end
 		document.getElementById( i ).innerHTML='O' // 1. 선택한 번호의 버튼 모양 변경
