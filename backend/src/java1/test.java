@@ -33,7 +33,7 @@ public class test {
 				System.out.println("총 반복 횟수 : " + 실행횟수 ); // 72회
 		*/		
 				
-				System.out.println("정수입력"); int 정수1 = scanner.nextInt();
+				System.out.println("정수입력"); int 정수1 = scanner.nextInt(); 
 				System.out.println("정수입력"); int 정수2 = scanner.nextInt();
 				System.out.println("정수입력"); int 정수3 = scanner.nextInt();
 				if( 정수1 > 정수2) {int temp = 정수1; 정수1 = 정수2; 정수2 = temp;}

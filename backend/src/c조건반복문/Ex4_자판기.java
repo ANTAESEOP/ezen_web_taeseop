@@ -74,7 +74,7 @@ public class Ex4_자판기 { // class start
 		}
 		
 
-	} // main end
+	} // main end 
 } // class end
 /*
 	자판기 프로그램
