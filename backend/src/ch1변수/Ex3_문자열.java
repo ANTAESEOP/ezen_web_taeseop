@@ -1,4 +1,4 @@
-package a변수;
+package ch1변수;
 
 public class Ex3_문자열 { // class start
 	public static void main(String[] args) { // main start

@@ -1,4 +1,4 @@
-package c조건반복문;
+package ch3조건반복문;
 
 import java.util.Scanner;
 

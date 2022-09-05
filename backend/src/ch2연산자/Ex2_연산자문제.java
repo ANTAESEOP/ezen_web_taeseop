@@ -1,4 +1,4 @@
-package b.연산자;
+package ch2연산자;
 
 import java.util.Scanner;
 

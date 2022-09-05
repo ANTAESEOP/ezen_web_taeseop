@@ -1,7 +1,7 @@
-package c조건반복문;
+package ch3조건반복문;
 
 // 1. 클래스 선언
-public class Ex_IF { // class start
+public class Ex1_IF { // class start
 	// 2. main() : 코드를 읽어주는 메소드
 	public static void main(String[] args) { // class main start
 		

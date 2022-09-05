@@ -1,8 +1,8 @@
-package b.연산자;
+package ch2연산자;
 
 import java.util.Scanner;
 
-public class Ex_연산자 {
+public class Ex1_연산자 {
 	
 	public static void main(String[] args) {
 		int 정수1 = 10; int 정수2 = 20;

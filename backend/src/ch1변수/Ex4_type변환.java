@@ -1,4 +1,4 @@
-package a변수;
+package ch1변수;
 
 public class Ex4_type변환 { // class start
 	
