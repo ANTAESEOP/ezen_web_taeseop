@@ -20,8 +20,16 @@ public class Ex2_로또판별기 { // class start
 		int[] 추첨번호 = new int[6]; // int형 변수 6개를 저장 할 수 있는 공간
 		
 		// 1. 사용자에게 입력 받는다. [ 6번 ]
-		System.out.println("");
-		
+		for( int i = 0; i<6 ; i++) { // i=인덱스
+			System.out.println("안내) " + (i+1) + "번째 번호 선택 : ");
+			구매번호[i] = scanner.nextInt(); // 입력받은 값을 i번째 인덱스에 저장한다.
+			if( 구매번호[i] < 1 || 구매번호[i] > 45) { // 만약에 입력값이 1보다 작거나 45보다 크면
+				System.err.println("안내) 선택할 수 없는 번호 입니다.");
+				i--; continue; // i값을 깎으면서
+				
+			}
+		} // for end
+
 	} // main end
 	
 } // class end
