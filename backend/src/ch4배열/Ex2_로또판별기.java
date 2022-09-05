@@ -25,9 +25,18 @@ public class Ex2_로또판별기 { // class start
 			구매번호[i] = scanner.nextInt(); // 입력받은 값을 i번째 인덱스에 저장한다.
 			if( 구매번호[i] < 1 || 구매번호[i] > 45) { // 만약에 입력값이 1보다 작거나 45보다 크면
 				System.err.println("안내) 선택할 수 없는 번호 입니다.");
-				i--; continue; // i값을 깎으면서
-				
-			}
+				i--; continue; // i값을 깎으면서	
+			} // if end
+			// [조건2] 배열 내 입력된 데이터 확인 [중복확인]
+			boolean 중복체크 = false;
+			for( int j = 0; j<구매번호.length ; j++) {
+				if( 구매번호[j] == 구매번호[i] ) {
+					System.out.println("안내) 이미 선택된 번호 입니다.");
+					중복체크 = true ;
+				}// if end
+			} // for2 end
+			if( 중복체크 == true) { i--; continue; }
+			
 		} // for end
 
 	} // main end
