@@ -30,7 +30,7 @@ public class Ex3_틱택토게임 {
 		// 3. 컴퓨터에게 위치 난수 생성.
 				while( true ) { // while 2
 				Random random = new Random(); // 랜덤 객체 생성
-				int 위치 = random.nextInt(9); // 0 ~ 8 난수 생상
+				int 위치 = random.nextInt(9); // 0 ~ 8 난수 생성
 				if( 게임판[위치].equals("[ ]")) { 게임판[위치] = "[X]" ; break;} 
 			}
 		// 4. 승리진단[ 과제 ]
