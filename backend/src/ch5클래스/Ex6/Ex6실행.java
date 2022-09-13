@@ -18,7 +18,7 @@ public class Ex6실행 {
 			System.out.println("이름 : "); 		String name = scanner.next();
 			// 객체선언
 			Member signupInfo = new Member( id, password , name , 1000);
-			
+			 
 			for( Member temp : MemberObject ) { // for ( 반복변수 : 배열 ) { }
 				if( temp == null ) {
 					temp = signupInfo; // 임시변수 수정 [ 원본 그대로 ]
