@@ -36,7 +36,7 @@ public class Ex3_틱택토게임 {
 		// 4. 승리진단[ 과제 ]
 				while( true ) { // while 3 start
 				for( int i = 0; i<6; i+=3) {
-				if((!게임판[i].equals("[ ]")) && 게임판[i])
+			
 				}
 				}// while 3 end
 		
