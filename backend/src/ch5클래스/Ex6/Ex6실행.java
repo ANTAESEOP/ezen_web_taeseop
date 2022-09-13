@@ -16,7 +16,7 @@ public class Ex6실행 {
 			System.out.println("아이디 : ");		String id = scanner.next();
 			System.out.println("비밀번호 : "); 	String password = scanner.next();
 			System.out.println("이름 : "); 		String name = scanner.next();
-			// 객체선언
+			// 객체선언 
 			Member signupInfo = new Member( id, password , name , 1000);
 			 
 			for( Member temp : MemberObject ) { // for ( 반복변수 : 배열 ) { }
