@@ -69,19 +69,12 @@ public class Ex7_비회원 { // class start
 										boardlist[selectboard][0] = null;
 										boardlist[selectboard][1] = null;
 									}
-								
-								
-							
-						
-					
-					
-					
-					
 						}
 					}
 					
 					} // while 2 end
 			} // while end
+			
 			} // main end
 		} // class end
 
