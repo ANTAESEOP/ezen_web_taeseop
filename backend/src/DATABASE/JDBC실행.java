@@ -14,7 +14,7 @@ public class JDBC실행 { // class start
 				// 1. 해당 프로젝트 오른쪽 클릭
 				// 2. build path -> configure build path
 				// 3. Libraries 웹 선택
-				// 4. add External Jar -> 해당 jar 파일 선ㄴ택
+				// 4. add External Jar -> 해당 jar 파일 선택
 					// * 해당 jar 파일의 경로 변경되면 라이브러리 실행 불가능.
 				// 5. apply
 			//3. 미리 만들어짐 JDBC 관련된 클래스를 사용할 수 있다.
