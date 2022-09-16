@@ -1,4 +1,4 @@
-package ch5클래스.Ex12_비회원제게시판;
+package ch5클래스.Ex12_비회원제게시판_함수버전;
 
 import java.util.Scanner;
 
