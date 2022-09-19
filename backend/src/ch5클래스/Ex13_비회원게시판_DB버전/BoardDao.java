@@ -115,20 +115,20 @@ public class BoardDao { // class start
 		return board;
 	}
 		// 4. 수정 처리 메소드
-	boolean update( int b_no , String b_password , String new_title , String new_content ) {
+	// boolean update( int b_no , String b_password , String new_title , String new_content ) {
 		// 1. SQL 작성
 		String sql = "update * from board where b_no = ? , b_password = ? , b_title = ? , b_content = ?";
-		try {
-			ps = con.prepareStatement(sql);
-			ps.setInt(b_no , sql);
-			ps.setString(b_password, sql);
-			ps.setString(new_title, sql);
-			ps.setString(new_content, sql);
-			ps.executeUpdate();
-		} catch (SQLException e) { System.out.println("경고) DB오류 : " + e);}
+		// try {
+			// ps = con.prepareStatement(sql);
+			// ps.setInt(b_no , sql);
+			// ps.setString(b_password, sql);
+			// ps.setString(new_title, sql);
+			// ps.setString(new_content, sql);
+			// ps.executeUpdate();
+		//} catch (SQLException e) { System.out.println("경고) DB오류 : " + e);}
 			
-		return false;
-	}
+		// return false;
+	// }
 	
 		// 5. 삭제 처리 메소드
 	boolean delete( int b_no , int b_password) {

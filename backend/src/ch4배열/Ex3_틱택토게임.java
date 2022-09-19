@@ -1,4 +1,4 @@
-package java1.ch4배열;
+package ch4배열;
 
 import java.util.Random;
 import java.util.Scanner;
