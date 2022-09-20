@@ -159,7 +159,7 @@ public class DAO {
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
 			if(rs.next() ) {
-				dto = new MemberDto
+				dto = new MemberDto 
 						(rs.getString(1), rs.getString(2),
 						rs.getInt(3), rs.getString(4),
 						rs.getString(5), rs.getString(6),
