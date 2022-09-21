@@ -26,8 +26,5 @@ public class MemberDto {
 		this.phone2 = phone2;
 		this.height = height;
 		this.debut_date = debut_date;
-	}			
-	
-	// 2. 생성자
-	
+	}		
 }
