@@ -60,3 +60,5 @@ public class ProductDto {
 		}
 }		
 
+// DTO 이동객체 ( 포장지 ?)
+// DAO DB접근 

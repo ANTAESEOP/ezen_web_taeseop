@@ -36,7 +36,7 @@ public class AdminView {
 	void inMenu( ) { 
 		System.out.print("추가할 메뉴 이름 : ");	
 		String menuname = scanner.next();
-		boolean result =  acontrol.inMenu( menuname );
+		boolean result = acontrol.inMenu( menuname );
 		
 		if( result ) { System.out.println("안내) 메뉴 등록 했습니다. ");}
 		else { System.out.println("안내) 메뉴 실패 했습니다. "); }
@@ -55,7 +55,7 @@ public class AdminView {
 		byte mno = scanner.nextByte();
 		///////// 제품 추가 /////////
 		
-		System.out.print("제품명 : "); 	scanner.nextLine(); String pname = scanner.nextLine();
+		System.out.print("제품명 : "); scanner.nextLine(); String pname = scanner.nextLine();
 		System.out.print("가격 : "); 	int pprice = scanner.nextInt();
 		System.out.print("소개 : "); 	scanner.nextLine(); String pcomment = scanner.nextLine();
 		System.out.print("초기 재고 : "); short pamount = scanner.nextShort();

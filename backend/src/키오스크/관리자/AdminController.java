@@ -14,7 +14,7 @@ public class AdminController {
 		return AdminDAO.getInstance().getMenu();
 	}
 	// 3. 제품 추가 로직 
-	Boolean inProduct( String pname,int pprice,
+	boolean inProduct( String pname,int pprice,
 			String pcomment , short pamount , byte mno ) { 
 		ProductDto dto = new ProductDto(0 , pname , pprice , pcomment , pamount , mno);
 		return AdminDAO.getInstance().InProduct(dto);
