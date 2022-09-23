@@ -6,7 +6,7 @@ public class AdminController {
 	
 	
 	// 2. 메뉴 추가 로직
-	boolean inMenu( String menuname ) {
+	boolean inMenu( String menuname  ) {
 		return AdminDAO.getInstance().inMenu(menuname); // 싱글톤객체 메소드 호출 
 	}
 	// 3. 메뉴 호출 로직

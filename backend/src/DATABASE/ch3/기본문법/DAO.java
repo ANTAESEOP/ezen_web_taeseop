@@ -192,6 +192,23 @@ public class DAO {
 			} // 예제8 결과 메소드 end
 /////////////////////////////////////////////////////////////////////////////////////////
 		// 9.  예제9 :
+		ArrayList< String > 예제9결과() {
+			ArrayList< String > list = new ArrayList<>();
+			String sql = "select mem_id , mem_name , debut_date from member order by debut_date desc;";
+			try {
+				ps = con.prepareStatement(sql);
+				rs = ps.executeQuery();
+				while( rs.next() ) { // rs.next() : 다음 레코드 이동
+					MemberDto dto = new MemberDto(); 
+					dto.mem_id = rs.getString(1);
+					dto.mem_name = rs.getString(2);
+					dto.debut_date = rs.getString(3);
+					list.add(dto);
+				} // while end
+				return list; // 반환
+			}catch (Exception e) { System.out.println("예제9 오류 : " + e); }
+			return list; // 반환
+		}	
 		// 10. 예제10 :
 		// 11. 예제11 :
 		// 12. 예제12 :

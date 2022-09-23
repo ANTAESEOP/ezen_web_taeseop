@@ -22,6 +22,7 @@ public class DAO {
 					"1234");
 		} catch (Exception e) {System.out.println(" 경고) DB 접속 실패 " + e);}
 	}
+	
 	public static DAO getInstance() {return dao;}
 	// 가계부 추가
 	boolean cashInput(CashDTO cashDTO) {
@@ -34,7 +35,7 @@ public class DAO {
 			ps.executeUpdate(); return true;
 		} catch (Exception e) {System.out.println("추가실풰" + e);}
 		return false;
-	}
+	} // insert end
 	
 	// 2. 가계부 출력
 	ArrayList<CashDTO> read() {
@@ -52,7 +53,7 @@ public class DAO {
 			return list;
 			} catch (Exception e) {System.out.println("추가실풰" + e);}
 		return list;
-	}
+	} // read end
 	
 	// 가계부 삭제
 	boolean delete( int pno ) {
@@ -63,7 +64,7 @@ public class DAO {
 			ps.executeUpdate(); return true;
 		}catch (Exception e) {}
 		return false;
-	}
+	} // delete end
 
 	// 가계부 수정
 		boolean cashEdit(CashDTO cashDTO) {
@@ -76,6 +77,7 @@ public class DAO {
 				ps.setInt(3, cashDTO.getPno());
 				ps.executeUpdate(); return true;
 			} catch (Exception e) {System.out.println("추가실풰" + e);}
-			return false;	
-	}
-}
+			return false;
+			
+	} // edit end
+} // class end
