@@ -2,7 +2,7 @@ package DATABASE.ch3.기본문법;
 
 public class MemberDto {
 	// 1. 필드
-	// DB TABLE 필드명 동일
+	// DB TABLE 필드명 동일 gka
 	String mem_id;
 	String mem_name;
 	int mem_number;	
