@@ -10,7 +10,7 @@ public class MemberDto {
 	String phone1;					
 	String phone2;					
 	short height;			
-	String debut_date;
+	String debut_date; 
 	int num;
 	String pord_name;
 	String group_name;
