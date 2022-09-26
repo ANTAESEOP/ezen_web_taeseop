@@ -25,221 +25,397 @@ public class DAO {
 	
 	// 3. 메소드
 	// 1. 예제 1 : 레코드 10줄 - > memberDto 8개 -> 배열 / 리스트
-	public ArrayList< MemberDto > 예제1결과( ) {
-		
-		// 배열 대신에 배열을 편하게 사용할 수 있는 미리 만들어진 클래스 [ 컬렉션(수집) 프레임워크 ]
-			// 리스트 [선언] : ArrayList<리스트에 들어갈 클래스> 리스트명 = new Arraylist<>();
-			// 리스트 객체 담기 : 리스트명.add( 객체명 )
-		ArrayList< MemberDto > list = new ArrayList<>();	// MemberDto 로 생성된 객체 여러개를 담을 수 있는 list 객체 선언
-		// 1. SQL 작성
+	// 1. 예제1 : 레코드10줄 -> memberDto 8개 -> 배열/리스트
+	ArrayList< MemberDto > 예제1결과( ) {
+		// 배열(array) 대신에 배열을 편하게 사용할수 있는 미리 만들어진 클래스 [ 컬렉션(수집) 프레임워크 ]
+			// 리스트 [선언] :  ArrayList< 리스트에 들어갈 객체의 클래스 > 리스트명 = new ArrayList<>();
+			// 리스트에 객체 담기 : 리스트명.add( 객체명 ) 
+		ArrayList< MemberDto > list  = new ArrayList<>();	// MemberDto 로 생성된 객체 여러개를 담을수 있는 list 객체 선언
+		// 1. sql작성
 		String sql = "select * from member";
-		// 2. SQL 연결조작
+		// 2. sql연결조작
 		try {
 			ps = con.prepareStatement(sql);
-			// 3. SQL 결과조작
+			// 3. sql결과조작
 			rs = ps.executeQuery();
-			while(rs.next() ) {
+			while( rs.next() ) {
 				// 레코드 -> 객체화
-				MemberDto dto = new MemberDto
-						(	rs.getString(1), rs.getString(2),
-							rs.getInt(3), rs.getString(4),
-							rs.getString(5), rs.getString(6),
-							rs.getShort(7), rs.getString(8) );
-				// 객체 -> 배열 / 리스트 담기
+				MemberDto dto = new MemberDto();
+						dto.mem_id =  rs.getString(1);
+						dto.mem_name =  rs.getString(2); 
+						dto.mem_number =  rs.getInt(3);
+						dto.addr =  rs.getString(4);
+						dto.phone1 =  rs.getString(5); 
+						dto.phone2 =  rs.getString(6);
+						dto.height =  rs.getShort(7);
+						dto.debut_date = rs.getString(8);
+				// 객체 -> 배열/리스트 담기
 				list.add(dto);
-			} // while end
+			} // while 
 			return list;
-		}catch (Exception e) { System.out.println("예제1 오류 : " +  e); }
+		}catch (Exception e) { System.out.println(" 예제1 오류 : " + e); }
 		return list;
-		
-	} // 예제1 결과 메소드 end
-///////////////////////////////////////////////////////////////////////////////////////////
-	// 2. 예제2 : 레코드 10줄 1 칸
+	
+	} // 1 end
+	
+	// 2. 예제 2: 레코드10줄 1칸
 	ArrayList< String > 예제2결과() {
-		
+		// 1. String 객체( 문자열 ) 여러개를 저장할수 있는 list 객체 선언 
 		ArrayList< String > list = new ArrayList<>();
 		String sql = "select mem_name from member";
 		try {
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
 			while( rs.next() ) { // rs.next() : 다음 레코드 이동
-				list.add(rs.getString( 1 ) );
-			} // while end
-			
-			return list; // 반환
-		}catch (Exception e) { System.out.println("예제2 오류 : " + e); }
-		
-		return list; // 반환
-	} // 예제2 결과 메소드 end
-///////////////////////////////////////////////////////////////////////////////////////////
-	// 3. 예제3 :
-	ArrayList< String > 예제3결과() {
-	ArrayList< String > list = new ArrayList<>();
-	String sql = "select * from member where mem_name ='블랙핑크'";
-	try {
-		ps = con.prepareStatement(sql);
-		rs = ps.executeQuery();
-		while( rs.next() ) { // rs.next() : 다음 레코드 이동
-			list.add(rs.getString( 1 ) );
-			list.add(rs.getString( 2 ) );
-			list.add(rs.getString( 3 ) );
-			list.add(rs.getString( 4 ) );
-			list.add(rs.getString( 5 ) );
-			list.add(rs.getString( 6 ) );
-			list.add(rs.getString( 7 ) );
-			list.add(rs.getString( 8 ) );
-		} // while end
-		return list; // 반환
-	}catch (Exception e) { System.out.println("예제3 오류 : " + e); }
-	return list; // 반환
-	} // 예제3 결과 메소드 end
-///////////////////////////////////////////////////////////////////////////////////////////
-	// 4. 예제4 :
-	ArrayList< String > 예제4결과() {
-	ArrayList< String > list = new ArrayList<>();
-	String sql = "select mem_id , mem_name from member where height <= 162";
-	try {
-		ps = con.prepareStatement(sql);
-		rs = ps.executeQuery();
-		while( rs.next() ) { // rs.next() : 다음 레코드 이동
-			list.add(rs.getString( 1 ) ); 
-			list.add(rs.getString( 2 ) );
-
-		} // while end
-		return list; // 반환
-	}catch (Exception e) { System.out.println("예제4 오류 : " + e); }
-	return list; // 반환
-	} // 예제4 결과 메소드 end
-///////////////////////////////////////////////////////////////////////////////////////////	
-	ArrayList<MemberDto> 예제5결과 () {
+				list.add( rs.getString( 1 ) ); // rs.get자료형(필드번호)
+			} // while end 
+			return list; // 반환 
+		}catch (Exception e) {  System.out.println(" 예제2 오류 : " + e); }
+		return list; // 반환 
+	} // 2 end
+	
+	// 3. 예제3 : 레코드1줄 : DTO 1개
+		// 메소드 [선언]  : 반환타입 함수명( 인수 ) { } 
+	MemberDto 예제3결과() {
+		// void : 함수 결과가 없다 뜻 
+		String sql = "select * from member where mem_name='블랙핑크'";
+		try {
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery(); 
+			if( rs.next() ) { // 결과1개 반복문 필요 없음 [ next 1번 ]
+				// 레코드의 8개 필드 --> 객체
+				MemberDto dto = new MemberDto();
+						dto.mem_id =  rs.getString(1);
+						dto.mem_name =  rs.getString(2); 
+						dto.mem_number =  rs.getInt(3);
+						dto.addr =  rs.getString(4);
+						dto.phone1 =  rs.getString(5); 
+						dto.phone2 =  rs.getString(6);
+						dto.height =  rs.getShort(7);
+						dto.debut_date = rs.getString(8);
+				return dto;
+			}
+		}catch (Exception e) { System.out.println(" 예제3 오류 : " + e); }
+		return null;
+	} // 3 end
+	
+	// 4. 예제4 : 레코드3줄 : DTO 3개 
+	ArrayList<MemberDto> 예제4결과() {		
 		ArrayList<MemberDto> list = new ArrayList<>();
-		String sql = "select mem_name , height , mem_number"
+
+		String sql ="select mem_id , mem_name "
+				+ " from member "
+				+ " where height <=162 ";
+		try {
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			while( rs.next() ) {
+				MemberDto dto = new MemberDto(); // 빈객체 선언
+				dto.mem_id = rs.getString(1);	
+				// 검색된 레코드의 첫번째 필드 -> 객체 필드에 대입
+				dto.mem_name = rs.getString(2); 
+				// 검색된 레코드의 두번째 필드 -> 객체 필드에 대입 
+				list.add(dto); // 객체 --> 리스트 추가
+			} // while end 
+			return list;
+		}catch (Exception e){ System.out.println(" 예제4 오류 : " + e); }
+		return list;
+	} // 4 end
+	
+	// 5. 예제5 
+	ArrayList< MemberDto > 예제5결과() {
+		ArrayList< MemberDto > list = new ArrayList<>();
+		String sql = "select mem_name , height , mem_number "
 				+ " from member "
 				+ " where height >= 165 and mem_number > 6";
 		try {
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
 			while( rs.next() ) {
-				MemberDto dto = new MemberDto(); 
-				dto.mem_name = rs.getString(1);
-				dto.height = rs.getShort(2);
-				dto.mem_number = rs.getInt(3);
-				list.add(dto);
+				MemberDto dto = new MemberDto(); // 빈 객체 생성 
+				dto.mem_name = rs.getString( 1 );
+				dto.height = rs.getShort( 2 );
+				dto.mem_number = rs.getInt( 3 );
+				list.add(dto); // 객체 -> 리스트 저장 
 			}
-			return list;
-		}catch (Exception e) { System.out.println("예제5 오류 : " + e);}
-		return list;
-	} 
-///////////////////////////////////////////////////////////////////////////////////////////	
-	ArrayList<MemberDto> 예제6결과 () {
+			return list; // 리스트 반환 
+		}catch (Exception e) { System.out.println(" 예제5 오류 : " + e); }
+		return list; // 리스트 반환
+	} // 5 end
+	
+	// 6. 예제6
+	ArrayList<MemberDto> 예제6결과() {
 		ArrayList<MemberDto> list = new ArrayList<>();
-		String sql = "select mem_name , height , mem_number"
-				+ " from member"
-				+ " where height >= 165 or mem_number > 6";
+		String sql = "select mem_name , height , mem_number "
+				+ "from member "
+				+ "where height >= 165 or mem_number > 6";
 		try {
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
 			while( rs.next() ) {
-				MemberDto dto = new MemberDto(); 
-				dto.mem_name = rs.getString(1);
-				dto.height = rs.getShort(2);
-				dto.mem_number = rs.getInt(3);
-				list.add(dto);
+				MemberDto dto = new MemberDto();
+				dto.mem_name = rs.getString( 1 );
+				dto.height = rs.getShort( 2 );
+				dto.mem_number = rs.getInt( 3 );
+				list.add(dto); 
 			}
 			return list;
-		}catch (Exception e) { System.out.println("예제6 오류 : " + e);}
+		}catch (Exception e) { System.out.println(" 예제6 오류 : " + e); }
 		return list;
-	} 
-///////////////////////////////////////////////////////////////////////////////////////////	
-		MemberDto 예제7결과() {
+	} // 6 end
+	
+	// 7. 
+	MemberDto 예제7결과() {
 		MemberDto dto = null;
-		String sql = "select * from member"
-				+ " where mem_name like '우%'";
+		String sql = "select * from member "
+				+ "where mem_name like '우%'";
 		try {
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
-			if(rs.next() ) {
-				dto = new MemberDto 
-						(rs.getString(1), rs.getString(2),
-						rs.getInt(3), rs.getString(4),
-						rs.getString(5), rs.getString(6),
-						rs.getShort(7), rs.getString(8) );
+			if( rs.next() ) {
+				dto = new MemberDto();
+						dto.mem_id =  rs.getString(1);
+						dto.mem_name =  rs.getString(2); 
+						dto.mem_number =  rs.getInt(3);
+						dto.addr =  rs.getString(4);
+						dto.phone1 =  rs.getString(5); 
+						dto.phone2 =  rs.getString(6);
+						dto.height =  rs.getShort(7);
+						dto.debut_date = rs.getString(8);
 				return dto;
 			}
-		}catch (Exception e) { System.out.println("예제7 오류 : " + e); }
-		return dto; // 반환
-		} // 예제7 결과 메소드 end
-///////////////////////////////////////////////////////////////////////////////////////////	
-		ArrayList< String > 예제8결과() {
-			ArrayList< String > list = new ArrayList<>();
-			String sql = "select * from member where mem_name like '__핑크'";
+		}catch (Exception e) { System.out.println(" 예제7 오류 : " + e); }
+		return dto;
+	} // 7 end
+	
+	// 8.
+	ArrayList<MemberDto> 예제8결과(){
+		ArrayList<MemberDto> list = new ArrayList<>();
+		String sql ="select * from member "
+				+ "where mem_name like '__핑크'";
+		try {
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			while( rs.next() ) {
+				MemberDto dto = new MemberDto();
+						dto.mem_id =  rs.getString(1);
+						dto.mem_name =  rs.getString(2); 
+						dto.mem_number =  rs.getInt(3);
+						dto.addr =  rs.getString(4);
+						dto.phone1 =  rs.getString(5); 
+						dto.phone2 =  rs.getString(6);
+						dto.height =  rs.getShort(7);
+						dto.debut_date = rs.getString(8);
+				list.add(dto);
+			} 
+			return list;
+		}catch (Exception e) { System.out.println(" 예제8 오류 : " + e); }
+		return list;
+	} // 8 end
+	
+	// 9.
+	ArrayList<MemberDto> 예제9결과(){
+		ArrayList<MemberDto> list = new ArrayList<>();
+		String sql = "select mem_id , mem_name , debut_date from member order by debut_date desc";
+		try {
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			while( rs.next() ) {
+				MemberDto dto = new MemberDto();
+						dto.mem_id = rs.getString(1); 
+						dto.mem_name = rs.getString(2);
+						dto.debut_date = rs.getString(3);
+				list.add(dto);
+			} 
+			return list;
+		}catch (Exception e) { System.out.println(" 예제9 오류 : " + e); }
+		return list;
+	} // 9 end	
+	// 10.
+	ArrayList<MemberDto> 예제10결과(){
+		ArrayList<MemberDto> list = new ArrayList<>();
+		String sql = "select mem_id , mem_name , debut_date , height from member where height >= 164 order by height desc";
+		try {
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			while( rs.next() ) {
+				MemberDto dto = new MemberDto();
+						dto.mem_id = rs.getString(1); 
+						dto.mem_name = rs.getString(2);
+						dto.debut_date = rs.getString(3);
+						dto.height = rs.getShort(4);
+						list.add(dto);
+			} 
+			return list;
+		}catch (Exception e) { System.out.println(" 예제10 오류 : " + e); }
+		return list;
+	} // 10 end	
+	
+	// 11.
+	ArrayList<MemberDto> 예제11결과(){
+		ArrayList<MemberDto> list = new ArrayList<>();
+		String sql = "select mem_id , mem_name , debut_date , height from member where height >= 164 order by height desc , debut_date asc";
+		try {
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			while( rs.next() ) {
+				MemberDto dto = new MemberDto();
+						dto.mem_id = rs.getString(1); 
+						dto.mem_name = rs.getString(2);
+						dto.debut_date = rs.getString(3);
+						dto.height = rs.getShort(4);
+						list.add(dto);
+			} 
+			return list;
+		}catch (Exception e) { System.out.println(" 예제11 오류 : " + e); }
+		return list;
+	} // 11 end	
+	
+	// 12.
+		ArrayList<MemberDto> 예제12결과(){
+			ArrayList<MemberDto> list = new ArrayList<>();
+			String sql = "select mem_name , height  from member order by height desc limit 3 , 2";
 			try {
 				ps = con.prepareStatement(sql);
 				rs = ps.executeQuery();
-				while( rs.next() ) { // rs.next() : 다음 레코드 이동
-					list.add(rs.getString( 1 ) );
-					list.add(rs.getString( 2 ) );
-					list.add(rs.getString( 3 ) );
-					list.add(rs.getString( 4 ) );
-					list.add(rs.getString( 5 ) );
-					list.add(rs.getString( 6 ) );
-					list.add(rs.getString( 7 ) );
-					list.add(rs.getString( 8 ) );
-				} // while end
-				return list; // 반환
-			}catch (Exception e) { System.out.println("예제8 오류 : " + e); }
-			return list; // 반환
-			} // 예제8 결과 메소드 end
-/////////////////////////////////////////////////////////////////////////////////////////
-		// 9.  예제9 :
-		ArrayList< String > 예제9결과() {
-			ArrayList< String > list = new ArrayList<>();
-			String sql = "select mem_id , mem_name , debut_date from member order by debut_date desc;";
-			try {
-				ps = con.prepareStatement(sql);
-				rs = ps.executeQuery();
-				while( rs.next() ) { // rs.next() : 다음 레코드 이동
-					MemberDto dto = new MemberDto(); 
-					dto.mem_id = rs.getString(1);
-					dto.mem_name = rs.getString(2);
-					dto.debut_date = rs.getString(3);
-					list.add(dto);
-				} // while end
-				return list; // 반환
-			}catch (Exception e) { System.out.println("예제9 오류 : " + e); }
-			return list; // 반환
-		}	
-		// 10. 예제10 :
-		// 11. 예제11 :
-		// 12. 예제12 :
-		// 13. 예제13 :
-		// 14. 예제14 :
-		// 15. 예제15 :
-		// 16. 예제16 :
-		// 17. 예제17 :
-		// 18. 예제18 :
-		// 19. 예제19 :
+				while( rs.next() ) {
+					MemberDto dto = new MemberDto();
+							dto.mem_name = rs.getString(1);
+							dto.height = rs.getShort(2);
+							list.add(dto);
+				} 
+				return list;
+			}catch (Exception e) { System.out.println(" 예제12 오류 : " + e); }
+			return list;
+		} // 12 end	
 		
+		// 13.
+		ArrayList<MemberDto> 예제13결과(){
+			ArrayList<MemberDto> list = new ArrayList<>();
+			String sql = "select distinct addr from member";
+			try {
+				ps = con.prepareStatement(sql);
+				rs = ps.executeQuery();
+				while( rs.next() ) {
+					MemberDto dto = new MemberDto();
+							dto.addr = rs.getString(1);
+							list.add(dto);
+				} 
+				return list;
+			}catch (Exception e) { System.out.println(" 예제13 오류 : " + e); }
+			return list;
+		} // 13 end	
+				
+		// 14.
+		ArrayList<MemberDto> 예제14결과(){
+			ArrayList<MemberDto> list = new ArrayList<>();
+			String sql = "select mem_id , sum(amount) as 수량합계 from buy group by mem_id";
+			try {
+				ps = con.prepareStatement(sql);
+				rs = ps.executeQuery();
+				while( rs.next() ) {
+					MemberDto dto = new MemberDto();
+							dto.mem_id = rs.getString(1);
+							dto.amount = rs.getInt(2);
+							list.add(dto);
+				} 
+				return list;
+			}catch (Exception e) { System.out.println(" 예제14 오류 : " + e); }
+			return list;
+		} // 14 end	
+				
+		// 15.
+		ArrayList<MemberDto> 예제15결과(){
+			ArrayList<MemberDto> list = new ArrayList<>();
+			String sql = "select mem_id as 회원_아이디 , sum( price*amount )  as 총_구매금액 from buy group by mem_id";
+			try {
+				ps = con.prepareStatement(sql);
+				rs = ps.executeQuery();
+				while( rs.next() ) {
+					MemberDto dto = new MemberDto();
+							dto.mem_id = rs.getString(1);
+							dto.price = rs.getInt(2);
+							list.add(dto);
+				} 
+				return list;
+			}catch (Exception e) { System.out.println(" 예제15 오류 : " + e); }
+			return list;
+		} // 15 end
+				
+		// 16.
+		ArrayList<MemberDto> 예제16결과(){
+			ArrayList<MemberDto> list = new ArrayList<>();
+			String sql = "select mem_id , avg( amount ) as 수량평균 from buy group by mem_id";
+			try {
+				ps = con.prepareStatement(sql);
+				rs = ps.executeQuery();
+				while( rs.next() ) {
+					MemberDto dto = new MemberDto();
+							dto.mem_id = rs.getString(1);
+							dto.amount = rs.getInt(2);
+							list.add(dto);
+				} 
+				return list;
+			}catch (Exception e) { System.out.println(" 예제16 오류 : " + e); }
+			return list;
+		} // 16 end	
+				
+		// 17.
+		ArrayList<MemberDto> 예제17결과(){
+			ArrayList<MemberDto> list = new ArrayList<>();
+			String sql = "select mem_id , count( phone1 ) as 연락처 from member group by mem_id";
+			try {
+				ps = con.prepareStatement(sql);
+				rs = ps.executeQuery();
+				while( rs.next() ) {
+					MemberDto dto = new MemberDto();
+							dto.mem_id = rs.getString(1);
+							dto.phone1 = rs.getString(2);
+							list.add(dto);
+				} 
+				return list;
+			}catch (Exception e) { System.out.println(" 예제17 오류 : " + e); }
+			return list;
+		} // 17 end
+				
+		// 18.
+		ArrayList<MemberDto> 예제18결과(){
+			ArrayList<MemberDto> list = new ArrayList<>();
+			String sql = "select mem_id , count( * ) as 회원수 from member group by mem_id";
+			try {
+				ps = con.prepareStatement(sql);
+				rs = ps.executeQuery();
+				while( rs.next() ) {
+					MemberDto dto = new MemberDto();
+							dto.mem_id = rs.getString(1);
+							dto.phone1 = rs.getString(2);
+							list.add(dto);
+				} 
+				return list;
+			}catch (Exception e) { System.out.println(" 예제18 오류 : " + e); }
+			return list;
+		} // 18 end	
+				
+		// 19.
+		ArrayList<MemberDto> 예제19결과(){
+			ArrayList<MemberDto> list = new ArrayList<>();
+			String sql ="select mem_id as 회원아이디 , sum( price * amount ) as 총구매금액\r\n"
+					+ "from buy\r\n"
+					+ "group by mem_id			\r\n"
+					+ "having sum( price * amount ) > 1000			\r\n"
+					+ "order by  sum( price * amount ) desc;";
+			try {
+				ps = con.prepareStatement(sql);
+				rs = ps.executeQuery();
+				while( rs.next() ) {
+					MemberDto dto = new MemberDto();
+						dto.mem_id =  rs.getString(1);
+						dto.amount = rs.getInt(2);
+							list.add(dto);
+				} 
+				return list;
+			}catch (Exception e) { System.out.println(" 예제19 오류 : " + e); }
+			return list;
+		} // 19 end					
 
-}	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
+} // class end	
