@@ -82,7 +82,6 @@ public class 의지마켓 {
             }
          }
          else {System.err.println("누를수 없습니다.");}
-         
       }//w e
    }//m e
 }// c e

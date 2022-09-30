@@ -19,9 +19,9 @@ public class Ex1_스레드 {
 			// . sleep( 밀리초 ) : 스레드 일시정지 [ 무조껀 예외처리 발생 ( try / catch ) ]
 		} // for end
 		
-		for ( int i = 0 ; i <5 ; i++) {
-			System.out.println("띵");
-			try {Thread.sleep(100);} catch (Exception e) {}
+		for ( int i = 0 ; i <5 ; i--) {
+			System.out.println(i);
+			try {Thread.sleep(6000);} catch (Exception e) {}
 		}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 		System.out.println(" -- 멀티 스레드 시작 -- ");
