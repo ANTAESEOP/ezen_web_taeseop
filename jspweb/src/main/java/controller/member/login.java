@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import model.dto.dao.MemberDao;
 
-@WebServlet("member/login") // URL 정의 : 해당 클래스로 들어올 수 있는 경로 설정
+@WebServlet("/member/login") // URL 정의 : 해당 클래스로 들어올 수 있는 경로 설정
 public class login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
