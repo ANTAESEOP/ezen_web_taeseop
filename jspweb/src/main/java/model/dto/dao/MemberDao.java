@@ -9,7 +9,7 @@ public class MemberDao extends Dao {
 	public static MemberDao getInstance() { return mdao; }
 	
 	// 기능 메소드 구현 
-	//1. 회원가입 메소드 
+	// 1. 회원가입 메소드 
 	public boolean signup( MemberDto dto ) {
 		String sql ="insert into"
 				+ " member( mid ,mpassword,mname,mphone,memail,maddress)"
@@ -25,5 +25,25 @@ public class MemberDao extends Dao {
 			ps.executeUpdate(); return true;
 		}catch (Exception e) {System.out.println(e);}
 		return false; 	
+	} // 회원가입 END
+	
+	// 2. 로그인 메소드
+	public boolean login(String id , String password) {
+		String sql = "select * from member "
+				+ "where mid=? and mpassword = ?";
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setString(1, id);
+			ps.setString(1, password);
+			rs = ps.executeQuery();
+			if(rs.next() ) {
+				return true;
+			}
+			
+		}catch (Exception e) {System.out.println(e);}
+		return false;
 	}
+	
+	
 }
+

@@ -16,6 +16,9 @@ public class signup extends HttpServlet {
 
 	protected void doPost( HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		// 0. 한글 인코딩 [ UFT-8 , EUC-KR ]
+		request.setCharacterEncoding("UTF-8");
+		
 		// 1. JSP(HTML) form 입력받은 데이터 요청!!!
 		String mid =  request.getParameter("mid");
 		String mpassword =  request.getParameter("mpassword");
@@ -23,7 +26,18 @@ public class signup extends HttpServlet {
 		String mname =  request.getParameter("mname");
 		String mphone =  request.getParameter("mphone");
 		String memail =  request.getParameter("memail");
-		String maddress =  request.getParameter("maddress");
+
+		
+		// 주소 4개 저장
+		String maddress1 =  request.getParameter("maddress1");
+		String maddress2 =  request.getParameter("maddress2");
+		String maddress3 =  request.getParameter("maddress3");
+		String maddress4 =  request.getParameter("maddress4");
+		
+		// 주소4개 -> 하나의 변수
+		String maddress = maddress1+","+maddress2+","+maddress3+","+maddress4;		
+		
+		
 		// 2. 변수6개 ---> DTO 객체화 
 		MemberDto dto = new MemberDto( 
 				0, mid,
@@ -32,6 +46,7 @@ public class signup extends HttpServlet {
 				maddress, null , 0);
 		// 3. 통신 확인 [ HTML ---> JAVA ]
 		System.out.println( dto.toString() );
+				
 		// 4. DAO 메소드 호출용 객체 선언 
 			// 1. 싱글톤객체가 아닐경우 [ 1. 객체생성  2. 객체명.메소드명() ] 
 				// MemberDao dao = new MemberDao(); 
@@ -39,9 +54,8 @@ public class signup extends HttpServlet {
 			// 2. 싱글톤객체가 있을경우 [ 클래스명.getInstance().메소드명() ]
 		boolean result = MemberDao.getInstance().signup(dto);
 		// 5. 결과 제어
-		if( result ) {System.out.println("회원가입 성공");}
+		if( result ) { response.sendRedirect("/jspweb/member/login.jsp");}
 		else { System.out.println("회원가입 실패");}
-		doGet(request, response);
 	}
 	
 	private static final long serialVersionUID = 1L;
