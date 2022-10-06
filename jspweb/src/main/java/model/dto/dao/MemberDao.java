@@ -2,23 +2,28 @@ package model.dto.dao;
 
 import model.dto.dto.MemberDto;
 
-public class MemberDao extends Dao{
-	// 싱글톤
+public class MemberDao extends Dao {
+	
+	// 0. 싱글톤 객체 선언 [ 공유 메모리 ] 
 	private static MemberDao mdao = new MemberDao();
 	public static MemberDao getInstance() { return mdao; }
 	
-	// 1. 회원가입
-	public boolean signup(MemberDto dto) {
-		
-		String sql = "insert into member values(?,?,?,?)";
+	// 기능 메소드 구현 
+	//1. 회원가입 메소드 
+	public boolean signup( MemberDto dto ) {
+		String sql ="insert into"
+				+ " member( mid ,mpassword,mname,mphone,memail,maddress)"
+				+ " values(?,?,?,?,?,?)";
 		try {
 			ps = con.prepareStatement(sql);
-			ps.setString(1, dto.getId());
-			ps.setString(2, dto.getPw());
-			ps.setString(3, dto.getName());
-			ps.setString(4, dto.getPhone());
-			ps.executeUpdate(); return true; // 성공하면 true 실패하면 false
+			ps.setString( 1 , dto.getMid() );
+			ps.setString( 2 , dto.getMpassword() );
+			ps.setString( 3 , dto.getMname() );
+			ps.setString( 4 , dto.getMphone() );
+			ps.setString( 5 , dto.getMemail() );
+			ps.setString( 6 , dto.getMaddress() );
+			ps.executeUpdate(); return true;
 		}catch (Exception e) {System.out.println(e);}
-		return false;
+		return false; 	
 	}
 }
