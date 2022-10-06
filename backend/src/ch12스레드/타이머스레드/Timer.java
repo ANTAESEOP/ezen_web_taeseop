@@ -5,8 +5,8 @@ public class Timer extends Thread {
 		// A클래스 = 자식클래스		// B클래스 = 부모클래스
 		// A클래스는 B클래스의 맴버( 필드 , 생성자 , 메소드 ) 접근 할 수 있다.
 	
-	private boolean stop = true;
-	private boolean wait = true;
+	boolean stop = true;
+	boolean wait = true;
 	
 	public void setStop(boolean stop) {this.stop = stop;}
 	public void setWait(boolean wait) {this.wait = wait;}

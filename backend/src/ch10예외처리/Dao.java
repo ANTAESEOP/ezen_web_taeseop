@@ -7,31 +7,35 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Dao {
-	// 필드
-	private Connection con;			// Connection  		: db연동 인터페이스
-	private PreparedStatement ps;	// PreparedStatement: sql연동/조작 인터페이스 
-	private ResultSet rs;			// ResultSet 		: sql결과[쿼리] 조작 인테페이스 		
-	private static Dao dao = new Dao();
-	public static Dao getInstance() {return dao;}
 	
-	// 생성자
-	private Dao() throws SQLException{
+	// 필드
+	private Connection con;
+	private PreparedStatement ps;
+	private ResultSet rs;
+	private static Dao dao = new Dao();
+
+	public static Dao getInstance() { return dao; }
+
+	// 생성자 
+	private Dao() {
 		try {
 			con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/mmth", "root",  "1234");
-		}catch (Exception e) { System.out.println( e ); } 	
+		}catch (Exception e) { System.out.println(e); }
 	}
 	
-	// 메소드
-	public void signup() throws SQLException{
-		String sql = "insert into menu values( null , ?  )"; // 1. SQL 작성
-			ps = con.prepareStatement(sql); 
-			ps.setString( 1 , "과자" );	
-			ps.executeUpdate();
-
+	// 메소드 
+	public void signup( ) throws SQLException {
+		String sql = "insert into menu values( null , ? )"; // 1. SQL 작성
+			ps = con.prepareStatement(sql); // 2. SQL 연결/조작
+			ps.setString( 1 , "과자" );	// ? : 첫번째 ? 에 변수 대입 
+							// 3. SQL 실행/결과조작
+			ps.executeUpdate(); // executeUpdate() : 실행
 	}
-	public void login() throws SQLException{
-		String sql = "";
+	public void login( ) throws SQLException {
+		String sql ="";
 		ps = con.prepareStatement(sql);
 		ps.executeQuery();
 	}
+	
 }
+
