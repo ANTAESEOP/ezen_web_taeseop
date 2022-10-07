@@ -7,8 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<%@include file="header.jsp"%>
+	<div class="webbox">
+	<img alt="" src="img/move.gif" width="100%">
 	<h3> 메인 페이지 </h3>
+	</div>
 
 
 
