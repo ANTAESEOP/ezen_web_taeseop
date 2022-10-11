@@ -12,16 +12,14 @@ public class postDao extends Dao {
 	
 	// 1. 게시판 등록
 	public boolean inputpost(postDto dto) {
-		String sql = "insert into"
-				+ "post(ptitle , pwriter , pcontent , ppassword)"
-				+ "values(?,?,?,?) ";
+		String sql = "insert into post(ptitle , pwriter , pcontent , ppassword) values (?,?,?,?)";;
 		try {
 			ps = con.prepareStatement(sql);
 			ps.setString(1, dto.getPtitle() );
-			ps.setString(1, dto.getPwriter() );
-			ps.setString(1, dto.getPcontent() );
-			ps.setString(1, dto.getPpasword() );
-			ps.executeQuery(); return true;
+			ps.setString(2, dto.getPwriter() );
+			ps.setString(3, dto.getPcontent() );
+			ps.setString(4, dto.getPpasword() );
+			ps.executeUpdate(); return true;
 		} catch (Exception e) {System.out.println(e);}
 		return false;
 	} // 게시판 end
