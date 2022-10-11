@@ -9,7 +9,7 @@
 <body>
 	<%@include file="/header.jsp"%>
 	<div class="webbox">	
-		<h3> 로그인 [ js ajax(비동기식) 전송 ] </h3>
+		<h3> 로그인 </h3>
 		아이디 : 		<input type="text" id="mid" > <br>
 		비밀번호 : 	<input type="text" id="mpassword"> <br>
 		<div id="loginconfirmbox"> </div>

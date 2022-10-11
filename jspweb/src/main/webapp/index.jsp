@@ -9,7 +9,9 @@
 <body>
 	<%@include file="header.jsp"%>
 	<div class="webbox">
-	<img alt="" src="img/move.gif" width="100%">
+	<img alt="" src="img/ip.gif" width="100%">
+	<h1>김경주 왜 따라하냐 ??</h1>
+	<img alt="" src="img/ip2.gif" width="100%">
 	<h3> 메인 페이지 </h3>
 	</div>
 

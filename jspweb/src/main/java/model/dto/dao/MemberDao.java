@@ -1,5 +1,7 @@
 package model.dto.dao;
 
+import java.util.ArrayList;
+
 import model.dto.dto.MemberDto;
 
 public class MemberDao extends Dao {
@@ -86,7 +88,64 @@ public class MemberDao extends Dao {
 		}catch (Exception e) {System.out.println(e);}
 		return false;		
 	}
-	
+	// 6. 회원정보 호출 
+	public MemberDto getinfo( String mid ) {
+		MemberDto dto = new MemberDto();
+		String sql ="select * from member where mid = ?";
+		try {
+			ps =  con.prepareStatement(sql);
+			ps.setString( 1 , mid );
+			rs = ps.executeQuery();
+			if( rs.next() ) {
+				// 1. 풀생성자 
+				dto.setMno(rs.getInt(1));
+				dto.setMid(rs.getString(2));
+				dto.setMname(rs.getString(3));
+				dto.setMphone(rs.getString(5));
+				dto.setMemail(rs.getString(6));
+				dto.setMaddress(rs.getString(7));
+				dto.setMdate(rs.getString(8));
+				dto.setMno(rs.getInt(9));								
+			}
+			// 2. 반환
+			return dto;
+		}catch (Exception e) { System.out.println( e );}
+		return dto;
+	}
+	// 7. 모든 회원 호출
+	public ArrayList<MemberDto> getinfolist(){
+		ArrayList<MemberDto> list = new ArrayList<>();
+		String sql = "select * from member";
+		try {
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				MemberDto dto = new MemberDto(
+						 rs.getInt(1) , rs.getString(2) , null,
+						 rs.getString(4) ,  rs.getString(5),
+						 rs.getString(6) ,  rs.getString(7),
+						 rs.getString(8) ,  rs.getInt(9)
+						 );
+				list.add(dto);
+			}
+			return list;
+		}catch (Exception e) {System.out.println(e);}
+		return list;
+	}
+	// 8. 회원탈퇴
+	public boolean delete( String mid , String mpassword) {
+		String sql = "delete from member"
+				+ " where mid = ? and mpassword = ? ";
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setString( 1 , mid );	
+			ps.setString( 2 , mpassword );
+			int count = ps.executeUpdate();  // 삭제 레코드 수 반환
+			if( count == 1 ) { return true; } 
+			// 삭제된 레코드가 1개 이면 성공 
+		}catch (Exception e) {System.out.println(e);} 
+		return false;
+	}
 	
 	
 	

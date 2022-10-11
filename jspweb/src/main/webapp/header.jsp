@@ -25,12 +25,28 @@
 				</span>
 			</div>
 
-				<ul class="hd_sub">
-					<li> <a href="/jspweb/member/login.jsp">로그인</a> </li>
-					<li> <a href="/jspweb/member/signup.jsp">회원가입</a> </li>
-					<li> <a href="#">마이쇼핑</a> </li>
-					<li> <a href="#">고객센터</a> </li>			
-				</ul>
+	<!-- 세션 호출 [ JSP방식 = 템플릿마다 다름 ( JSP vs 리엑트 ) -->
+			<% 
+				// JSP 스트립트 태그
+				String loginid = (String)session.getAttribute("mid");
+			%> 
+
+			<ul class="hd_sub">
+			<!-- 비로그인 메뉴 -->
+			<%if(loginid == null){%>
+				<li> <a href="/jspweb/member/login.jsp">로그인</a> </li>
+				<li> <a href="/jspweb/member/signup.jsp">회원가입</a> </li>
+				
+			<!-- 로그인 메뉴 // 세션 -->
+			<% }else{ %>
+				<li> <%=loginid %> 님 안녕하세요 </li>
+				<li> <a href="/jspweb/member/logout.jsp"> 로그아웃 </a> </li>
+			<%}		%>
+			
+			<!-- 공통 메뉴  -->
+				<li> <a href="/jspweb/member/info.jsp">마이쇼핑</a> </li>
+				<li> <a href="#">고객센터</a> </li>			
+			</ul> <!-- 상단 메뉴 end -->
 		</div>
 		<ul class="hd_menu"> <!-- 하단 헤더 -->
 			<li><a href="#">인기</a></li>
