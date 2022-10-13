@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+
 </head>
 <body>
 	<%@include file="/header.jsp"%>
@@ -24,5 +24,6 @@
 	</div>
 	
 	<script src="../js/member/login.js" type="text/javascript"></script>
+
 </body>
 </html>
