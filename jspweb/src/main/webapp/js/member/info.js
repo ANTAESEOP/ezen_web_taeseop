@@ -4,7 +4,6 @@ function getmember(){
 $.ajax({
 	url : "http://localhost:8080/jspweb/member/info" , 
  	success : function( result ) {
-		alert('al')
 		// HTTP 스트림( 바이트단위 ) json형식의 문자타입을 JSON 타입으로 형변환 
 		let member = JSON.parse( result )
 		document.querySelector("#mno").innerHTML = member.mno
@@ -66,7 +65,6 @@ function viewdelete(){
 	// 3. tag에 html 넣기
 	deletebox.innerHTML = tag
 }
-alert('1.');
 function mdelete(){
 	// 1. tag에 입력된 비밀번호 가져온다
 	let mpassword = document.querySelector("#mpassword").value
@@ -84,18 +82,32 @@ function mdelete(){
 	})
 }
 
+let buttons =  document.querySelectorAll('button')  // 현재 페이지의 모든 버튼 호출
 
-
-
-
-
-
-
-
-
-
-
-
+function updateaction(){
+	let mname  = document.querySelector('#mname')
+	if( buttons[1].innerHTML === '확인' ){
+		$.ajax({
+			url : "/jspweb/member/update" ,
+			data : { "mname" : mname.value } , 
+			success : function( re ){ 
+				if( re === 'true'){
+					alert('수정성공')
+				}else{
+					alert('수정실패')
+				}
+			}
+		})
+		buttons[1].innerHTML = '수정'
+		mname.readOnly = true;	// 수정모드 설정 
+		//location.href = 'url' ; // 페이지 이동
+		location.reload() ; 	// 현재 페이지 새로고침
+	}else{
+		alert('수정후 확인 버튼 클릭시 수정이 완료됩니다.')
+		mname.readOnly = false;	// 수정모드 제거 
+		buttons[1].innerHTML = '확인'
+	}
+}
 
 /*
 	선언 : let 객체명 = { 속성명 : 값 , 속성명 : 값 , 속성명 : 값 }

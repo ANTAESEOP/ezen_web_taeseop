@@ -21,7 +21,7 @@
 		<div class ="hd_top"> <!-- 상단메뉴 -->
 			<div> <!--  로고 -->	
 				<span class="hd_title">
-				<a href="/jspweb/index.jsp">Pork Shop </a> 
+				<a href="/jspweb/index.jsp">Phone Shop </a> 
 				</span>
 			</div>
 
