@@ -23,9 +23,9 @@ public class viewload extends HttpServlet {
 				request.getParameter("bno") ) ;
 		
 		request.getSession().setAttribute("bno", bno);
+		response.setCharacterEncoding("utf-8");
 		
 	}
-
 	
 	private static final long serialVersionUID = 1L;
        

@@ -19,8 +19,9 @@ public class post extends HttpServlet {
 	String pwriter = request.getParameter("pwriter");	
 	String pcontent = request.getParameter("pcontent");	
 	String ppassword = request.getParameter("ppassword");	
+
 	
-	postDto dto = new postDto(0 , ptitle , pwriter , pcontent , ppassword, 0);
+	postDto dto = new postDto(0 , ptitle , pwriter , pcontent , ppassword, 0, 0);
 	
 	System.out.println(dto.toString() );
 	

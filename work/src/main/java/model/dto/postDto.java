@@ -8,10 +8,11 @@ public class postDto {
 		private String pcontent;
 		private String ppasword;
 		private int pdate;
+		private int pview;
 		
 		public postDto() {}
 
-		public postDto(int pno, String ptitle, String pwriter, String pcontent, String ppasword, int pdate) {
+		public postDto(int pno, String ptitle, String pwriter, String pcontent, String ppasword, int pdate, int pview) {
 			super();
 			this.pno = pno;
 			this.ptitle = ptitle;
@@ -19,6 +20,7 @@ public class postDto {
 			this.pcontent = pcontent;
 			this.ppasword = ppasword;
 			this.pdate = pdate;
+			this.pview = pview;
 		}
 
 		public int getPno() {
@@ -69,11 +71,19 @@ public class postDto {
 			this.pdate = pdate;
 		}
 
+		public int getPview() {
+			return pview;
+		}
+
+		public void setPview(int pview) {
+			this.pview = pview;
+		}
+
 		@Override
 		public String toString() {
 			return "postDto [pno=" + pno + ", ptitle=" + ptitle + ", pwriter=" + pwriter + ", pcontent=" + pcontent
-					+ ", ppasword=" + ppasword + ", pdate=" + pdate + "]";
+					+ ", ppasword=" + ppasword + ", pdate=" + pdate + ", pview=" + pview + "]";
 		}
+
 		
-		
-}
+}		

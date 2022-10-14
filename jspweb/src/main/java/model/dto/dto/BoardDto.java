@@ -2,29 +2,32 @@ package model.dto.dto;
 
 public class BoardDto {
 	
-	private int bno;
-	private String btitle;
-	private String bcontent;
-	private int mno;
-	private String bfile;
-	private String bdate;
-	private int bview;
-	private int cno;
-	private String mid;
+	private int bno;		;	
+	private String btitle	;					
+	private String bcontent	;		
+	private String bfile 	;
+	private String bdate 	;
+	private int bview  		;
+	private int cno  		;
+	private int mno 		;	// 필요시 삭제 가능
 	
-	public BoardDto() {}
+	private String mid	;		// 게시물 출력용 
+	
+	public BoardDto() {
+		// TODO Auto-generated constructor stub
+	}
 
-	public BoardDto(int bno, String btitle, String bcontent, int mno, String bfile, String bdate, int bview, int cno,
+	public BoardDto(int bno, String btitle, String bcontent, String bfile, String bdate, int bview, int cno, int mno,
 			String mid) {
 		super();
 		this.bno = bno;
 		this.btitle = btitle;
 		this.bcontent = bcontent;
-		this.mno = mno;
 		this.bfile = bfile;
 		this.bdate = bdate;
 		this.bview = bview;
 		this.cno = cno;
+		this.mno = mno;
 		this.mid = mid;
 	}
 
@@ -50,14 +53,6 @@ public class BoardDto {
 
 	public void setBcontent(String bcontent) {
 		this.bcontent = bcontent;
-	}
-
-	public int getMno() {
-		return mno;
-	}
-
-	public void setMno(int mno) {
-		this.mno = mno;
 	}
 
 	public String getBfile() {
@@ -92,6 +87,14 @@ public class BoardDto {
 		this.cno = cno;
 	}
 
+	public int getMno() {
+		return mno;
+	}
+
+	public void setMno(int mno) {
+		this.mno = mno;
+	}
+
 	public String getMid() {
 		return mid;
 	}
@@ -102,10 +105,26 @@ public class BoardDto {
 
 	@Override
 	public String toString() {
-		return "BoardDto [bno=" + bno + ", btitle=" + btitle + ", bcontent=" + bcontent + ", mno=" + mno + ", bfile="
-				+ bfile + ", bdate=" + bdate + ", bview=" + bview + ", cno=" + cno + ", mid=" + mid + "]";
+		return "BoardDto [bno=" + bno + ", btitle=" + btitle + ", bcontent=" + bcontent + ", bfile=" + bfile
+				+ ", bdate=" + bdate + ", bview=" + bview + ", cno=" + cno + ", mno=" + mno + ", mid=" + mid + "]";
 	}
 	
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }	
+
