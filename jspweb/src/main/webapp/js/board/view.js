@@ -14,7 +14,7 @@ function bview(){
 			// 상대경로 : 현재 위치 기준[ http://localhost:8080/jspweb/js/view.js ]
 			//			../board/filedown
 			
-			if(board.file !== null){ // null , undefiend , 0
+			if(board.file !==  null){ // null , undefiend , 0
 				let filelink = `<a href="/jspweb/board/filedown?bfile=${board.bfile}">${board.bfile}</a>`
 				// ' ' : 전체 문자열 처리
 				// " " : 전체 문자열내 문자열 구분
@@ -33,8 +33,6 @@ function bview(){
 			}else{
 				alert('남의글');
 			}
-
-
 		}
 	})
 }
@@ -51,7 +49,6 @@ function bdelete(bno){
 			else{alert('글 삭제 실패 : [관리자문의]')}
 		}
 	})
-	alert(bno)
 }
 
 

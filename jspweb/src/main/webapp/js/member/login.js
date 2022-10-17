@@ -26,7 +26,6 @@ function login(){
 		url : "/jspweb/member/login" ,
 		data : { "mid" : mid , "mpassword" : mpassword} ,
 		success : function( re ){
-			alert(re)
 			if( re === '1'){
 				location.href = '/jspweb/index.jsp';
 			}else if (re === '2'){

@@ -34,8 +34,11 @@ function bwrite(){
 		// false
 		type : 'POST' , // http메소드 [ get vs post ]
 		success : function( re ) {
-			if(re==='true'){alert('글 등록 완료!'); location.href="http://localhost:8080/jspweb/board/list.jsp"}}
-	
+			if(re === 'true'){
+				alert('글 등록 완료!')
+				location.href="../board/list.jsp"}
+				else{alert('글 등록 실패 : [ 관리자 문의]') }
+			}
 	})
 
 
