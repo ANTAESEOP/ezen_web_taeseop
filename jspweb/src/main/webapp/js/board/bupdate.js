@@ -7,9 +7,9 @@ function bview(){
 			let board = JSON.parse(re)
 			console.log( board )
 			
-			document.querySelector('.bfile').value = board.btitle
+			document.querySelector('.btitle').value = board.btitle
 			// 썸머노트는 내용 저장시 html 형식으로 저장하기 때문에
-			document.querySelector('.bfile').innerHTML = board.bcontent
+			document.querySelector('.bcontent').innerHTML = board.bcontent
 			
 			if(board.bfile !== null){ // 첨부파일이 존해 하면
 				let filedelete = board.bfile + '<button type="button" onclick="bfiledelete()">삭제</button>'
@@ -34,21 +34,22 @@ function bfiledelete(){
 	
 	// 1. 
 	if( confirm('삭제하시겠습니까?')){
-	$.ajax({
-		url : "/jspweb/board/bfiledelete",
-		success : function(re){
-			if( re === 'true'){
-				alert('첨부파일 삭제')
-				// * 현재페이지 새로고침 : location.reload()
-				// location.reload()
-				document.querySelector('.oldbfilebox').innerHTML = '' // 공백처리
-				// * 특정태그만 새로고침 : JQUERY ( $ ) 제공
-				$("#oldbfilebox").load( location.href+ ' #oldbfilebox')				 
-			}else{
-				alert('첨부파일 삭제 실패')
-			}			
-		}	
-	})
+		$.ajax({
+			url : "/jspweb/board/bfiledelete",
+			success : function(re){
+				alert( re )
+				if( re === 'true'){
+					alert('첨부파일 삭제')
+					// * 현재페이지 새로고침 : location.reload()
+					// location.reload()
+					document.querySelector('.oldbfilebox').innerHTML = '' // 공백처리
+					// * 특정태그만 새로고침 : JQUERY ( $ ) 제공
+					$("#oldbfilebox").load( location.href+ ' #oldbfilebox')				 
+				}else{
+					alert('첨부파일 삭제 실패')
+				}			
+			}	
+		})
 	}
 }
 

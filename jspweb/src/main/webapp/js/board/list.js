@@ -1,10 +1,21 @@
-list() // js 열람시 메소드 1번 실행 
-function list(){ // 함수 정의한다
+
+let pageinfo = { // js 객체 선언
+	listsize : 3, // 한 페이지 당 게시물 표시 개수
+	page : 1 // 현재 페이지 번호
+}
+
+list(1) // js 열람시 메소드 1번 실행 
+function list(page){ // 함수 정의한다
+
+	pageinfo.page = page;
+
 	$.ajax({
 		url : "http://localhost:8080/jspweb/board/list" , 
+		data : pageinfo ,
 		success : function( re ){
-			console.log( re )
-			let boardlist = JSON.parse( re )
+			let boards = JSON.parse(re)
+			console.log( boards )
+			let boardlist = boards.data
 			console.log( boardlist )
 			let html = ""
 			// boardlist -> 객체를 하나씩 꺼내기
@@ -23,7 +34,33 @@ function list(){ // 함수 정의한다
 						'</tr>';
 			} // for end 
 				console.log( html )
-			document.querySelector('.btalbe').innerHTML += html
+			document.querySelector('.btalbe').innerHTML = html
+			
+			// 1. 페이징 버튼 html 구성
+			let pagehtml = '';
+				// 2. 이전 버튼
+					// 만일 현재 페이지가 첫 페이지 이면 이전페이지 불가
+				if( page == 1 ){pagehtml += '<button onclick="list( '+(page)+')">이전</button>';}
+				else{pagehtml += '<button onclick="list( '+(page-1)+')">이전</button>';}
+
+				
+				// 4. 페이지 번호 버튼
+				for( let page = boards.startbtn; page <= boards.endbtn ; page++){
+					pagehtml += '<button type="button" onclick="list('+page+')">'+page+'</button>'
+				}	
+				// 3. 다음 버튼
+				if(page >= boards.totalpage){pagehtml +='<button onclick="list('+(page)+')">'+page+'</button>'}
+				else{pagehtml += '<button onclick="list( '+(page+1)+')">다음</button>';}
+			
+			document.querySelector('.pagebox').innerHTML = pagehtml
+			
+			
+			
+			
+			
+			
+			
+			
 		}
 	})
 }

@@ -24,9 +24,11 @@ public class BoardDao extends Dao {
 		return false;
 	}
 	// 2. 글출력
-	public ArrayList< BoardDto > getlist( ) {
+	public ArrayList< BoardDto > getlist( int startrow , int listsize) {
 		ArrayList< BoardDto > list = new ArrayList<>();
-		String sql = "select b.* , m.mid from member m , board b where m.mno = b.mno;";
+		String sql = "select b.* , m.mid from member m , board b "
+				+ " where m.mno = b.mno "
+				+ " order by b.bdate desc limit "+startrow+" , "+listsize;
 		try {
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
@@ -79,19 +81,16 @@ public class BoardDao extends Dao {
 	
 	// 5. 첨부파일만 삭제 [ 업데이트 ]
 	public boolean bfiledelete(int bno) {
-		String sql = "update board set bfile = null where bno"+bno;
+		String sql = "update board set bfile = null where bno = "+bno;
 		try {
 			ps = con.prepareStatement(sql);
 			ps.executeUpdate(); return true;
 		}catch (Exception e) {System.out.println(e);} return false;
 	}
 	
-	
-	
-	
 	// 글 수정
 	public boolean bupdate(int bno , String btitle , String bcontent , String bfile) {
-		String sql = "update board set btitle = ? , bcontent = ? , bfile = ? where bno ?";
+		String sql = "update board set btitle = ? , bcontent = ? , bfile = ? where bno = ?";
 		try {
 			ps = con.prepareStatement(sql);
 			ps.setString( 1 , btitle );	
@@ -102,6 +101,29 @@ public class BoardDao extends Dao {
 		}catch (Exception e) {System.out.println(e);} return false;
 	}
 	
+	// 조회수
+	public boolean bviewup(int bno) {
+		String sql = "update board SET bview = bview + 1 where bno ="+ bno;
+		try {
+			ps = con.prepareStatement(sql);
+			ps.executeUpdate();
+			return true;
+		}catch (Exception e) {System.out.println(e);}
+		return false;
+		
+	}
+	
+	// 전체 게시물 수 // count(*) : 레코드 수 = 게시물 수 
+	public int gettotalsize() {
+		String sql = "select count(*) from board";
+		try {
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			if(rs.next() ) return rs.getInt(1);
+		}catch (Exception e) {System.out.println(e);}
+		return 0;
+		
+	}
 	
 	
 }	

@@ -33,7 +33,7 @@ public class bupdate extends HttpServlet {
 		// 3. 요청
 		String btitle = multi.getParameter("btitle");
 		String bcontent = multi.getParameter("bcontent");
-		String bfile = multi.getParameter("bfile");
+		String bfile = multi.getFilesystemName("bfile");
 			
 		// * 수정할 게시물의 번호
 		int bno = (Integer)request.getSession().getAttribute("bno");
