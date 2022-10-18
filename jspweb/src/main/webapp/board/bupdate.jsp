@@ -9,7 +9,7 @@
 	<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 </head>
 <body>
-	<%@include file="../header.jsp" %>
+	<%@include file="../header.jsp" %> 
 	<!-- 로그인 안되어 있는 로그인페이지 이동 -->
 	<% if( loginid == null ) response.sendRedirect("http://localhost:8080/jspweb/member/login.jsp");  %>
 	<div class="webbox">
