@@ -77,16 +77,31 @@ public class BoardDao extends Dao {
 		return false;
 	}	
 	
-	// 글 수정
-	public boolean bupdate(String btitle , String bcontent , String bfile) {
-		String sql = "update board set btitle = ? , bcontent = ? , bfile = ?;";
+	// 5. 첨부파일만 삭제 [ 업데이트 ]
+	public boolean bfiledelete(int bno) {
+		String sql = "update board set bfile = null where bno"+bno;
 		try {
 			ps = con.prepareStatement(sql);
-			ps.setString( 1 , btitle );	ps.setString( 2 , bcontent );
-			ps.setString(3, bfile);
 			ps.executeUpdate(); return true;
 		}catch (Exception e) {System.out.println(e);} return false;
 	}
+	
+	
+	
+	
+	// 글 수정
+	public boolean bupdate(int bno , String btitle , String bcontent , String bfile) {
+		String sql = "update board set btitle = ? , bcontent = ? , bfile = ? where bno ?";
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setString( 1 , btitle );	
+			ps.setString( 2 , bcontent );
+			ps.setString( 3 , bfile);
+			ps.setInt( 4 , bno);
+			ps.executeUpdate(); return true;
+		}catch (Exception e) {System.out.println(e);} return false;
+	}
+	
 	
 	
 }	

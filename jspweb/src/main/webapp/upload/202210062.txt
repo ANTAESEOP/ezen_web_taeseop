@@ -1,0 +1,4 @@
+1. JSP(HTML) form 입력받은 데이터 요청 / request.getParameter
+2. 변수 6개 ---> DTO 객체화
+3. 통신 결과 확인[ HTML -> JAVA ]
+4. DAO  메소드 호출용 객체 선언

@@ -22,7 +22,7 @@ function bwrite(){
 	console.log(formdata)
 	
 	$.ajax({
-		url: "http://localhost:8080/jspweb/board/write", // 1. 서블릿 주소
+		url: "/jspweb/board/write", // 1. 서블릿 주소
 		data : formdata , // ajax 기본값으로 form 전송 불가능	 // 2. 
 		contentType : false ,
 		// 기본값 : application x-www-form-urlencoded; charset = 

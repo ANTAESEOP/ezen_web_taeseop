@@ -16,6 +16,8 @@ function bview(){
 			
 			if(board.file !==  null){ // null , undefiend , 0
 				let filelink = `<a href="/jspweb/board/filedown?bfile=${board.bfile}">${board.bfile}</a>`
+				// let filelink = '<a href="/jspweb/board/filedown?bfile='+board.bfile+'">'+board.bfile+'</a>'
+				
 				// ' ' : 전체 문자열 처리
 				// " " : 전체 문자열내 문자열 구분
 				document.querySelector('.bfile').innerHTML = filelink;

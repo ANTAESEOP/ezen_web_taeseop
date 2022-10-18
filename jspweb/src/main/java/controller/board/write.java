@@ -58,8 +58,11 @@ public class write extends HttpServlet {
 			// new MultipartRequest( 1. 요청방식 , 2. 파일저장경로 , 3. 최대용량범위 , 4. 인코딩타입 5. 기타(보안가능) )
 		
 		// 1. 저장경로 [ 프로젝트 저장 ]
-		String uploadpath = "C:\\Users\\504\\git\\ezen_web_taeseop\\jspweb\\src\\main\\webapp\\upload";
-		
+		// String uploadpath = "C:\\Users\\504\\git\\ezen_web_taeseop\\jspweb\\src\\main\\webapp\\upload";
+		// 1. 저장 경로 [ 배포된 프로젝트의 ( 서버 ) 폴더 저장 ]
+			// 1. 현재 배포된 프로젝트의 경로 찾기
+		String uploadpath = request.getSession().getServletContext().getRealPath("/upload");
+		System.out.println(uploadpath);
 		// 2. Multipart 객체 생성
 		MultipartRequest multi = new MultipartRequest(
 			request , 						// 1. 요청 방식

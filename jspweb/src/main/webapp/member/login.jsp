@@ -11,7 +11,7 @@
 	<div class="webbox">	
 		<h3> 로그인 </h3>
 		아이디 : 		<input type="text" id="mid" > <br>
-		비밀번호 : 	<input type="text" id="mpassword"> <br>
+		비밀번호 : 	<input type="password" id="mpassword"> <br>
 		<div id="loginconfirmbox"> </div>
 		<button id="loginbox" type="button" onclick="login()">로그인</button>
 		

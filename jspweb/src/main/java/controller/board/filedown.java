@@ -13,24 +13,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class filedown
- */
+
 @WebServlet("/board/filedown")
 public class filedown extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+
     public filedown() {
         super();
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		// --- 업로드 된 파일을 다운로드 ---
@@ -39,8 +31,9 @@ public class filedown extends HttpServlet {
 		String bfile = request.getParameter("bfile");			// 다운로드할 파일명 요청
 		
 			// 2. 경로 + 파일명으로 해당 파일 위치 찾기
-		String uploadpath = "C:\\Users\\504\\git\\ezen_web_taeseop\\jspweb\\src\\main\\webapp\\upload\\"+bfile;
+		// String uploadpath = "C:\\Users\\504\\git\\ezen_web_taeseop\\jspweb\\src\\main\\webapp\\upload\\"+bfile;
 			// 3. 해당 경로의 파일을 객체화 [ java에서 파일클래스 = File ]
+		String uploadpath = request.getSession().getServletContext().getRealPath("/upload"+bfile);
 		File file = new File(uploadpath); // 해당 경로에 존재하는 파일을 객체화 불러오기 [ 해당 파일을 조작/메소드 ]
 			// 4. HTTP 해서 지원하는 다운로드 메소드
 		response.setHeader(

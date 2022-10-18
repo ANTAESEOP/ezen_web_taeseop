@@ -9,9 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import model.dto.dao.MemberDao;
 
-/**
- * Servlet implementation class update
- */
+
 @WebServlet("/member/update")
 public class update extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -28,22 +26,12 @@ public class update extends HttpServlet {
 	}
 
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+
     public update() {
         super();
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
