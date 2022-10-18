@@ -11,13 +11,12 @@ function postlist (){
 				console.log(b)
 						html += '<tr>' +
 							'<td>'+b.pno+'</td>'+
-							'<td><a href="http://localhost:8080/jspweb/board/view.jsp?bno='+b.bno+'">'+b.btitle+'</a></td>'+
-							'<td onclick="viewload('+b.pno+')">'+b.ptitle+'</td>'+
-							'<td>'+b.mno+'</td>'+
-							'<td>'+b.mid+'</td>'+
-							'<td>'+b.bdate+'</td>'+
-							'<td>'+b.bview+'</td>'+
+							'<td>'+b.ptitle+'</td>'+
+							'<td>'+b.pwriter+'</td>'+
+							'<td>'+b.pdate+'</td>'+
+							'<td>'+b.pview+'</td>'+
 						'</tr>';
+						document.querySelector('.table').innerHTML = html
 						
 			}
 		}
