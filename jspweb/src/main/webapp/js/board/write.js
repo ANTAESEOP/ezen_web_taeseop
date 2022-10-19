@@ -34,7 +34,6 @@ function bwrite(){
 		// false
 		type : 'POST' , // http메소드 [ get vs post ]
 		success : function( re ) {
-			alert( re )
 			if(re === 'true'){
 				alert('글 등록 완료!')
 				location.href="../board/list.jsp"}

@@ -10,24 +10,8 @@
 </head>
 <body>
 	<%@include file="../header.jsp" %>
-	<%-- <%
-	//	int bno = Integer.parseInt( request.getParameter("bno") );
-	//	BoardDto dto = BoardDao.getInstance().getboard(bno);
-	%> --%>
-		
-	<!-- 		
-	<div class="webbox">
-		<h3> 글 조회 </h3>
-		<table>
-			<tr> <td> 번호 <td> <td> <%-- <%=dto.getBno() %> --%> </td> </tr>
-			<tr> <td> 제목 <td> <td> <%-- <%=dto.getBtitle() %> --%> </td> </tr>
-			<tr> <td> 내용 <td> <td> <%-- <%=dto.getBcontent() %> --%> </td> </tr>
-			<tr> <td> 작성자 <td> <td> <%-- <%=dto.getMno() %> --%> </td> </tr>
-		</table>
-	</div>
-	
-	 -->
 	 
+	<!-- 글 조회 -->
 	<div class="webbox">
 		<h3> 글 조회 </h3>
 		<table>
@@ -38,12 +22,29 @@
 			<tr> <td> 첨부파일 <td> <td class="bfile"> 	</td> </tr>
 		</table>
 		
+		<!-- 목록보기 -->	
 		<div class="btnbox">
 			<a href="list.jsp">목록보기</a>
- 
 		</div>
+			
+				 
+		<!-- 댓글 작성  -->
+		<div class="replybox">
+			<textarea rows="" cols="" class="rcontent"></textarea>
+			<button type="button" onclick="rwrite()"> 댓글 작성 !</button>
+		</div>
+			
+			<div class="replylist">
+			
+			
+			</div>
+		
+		
 	</div>
+
 	 
+	 
+
 	 <script type="text/javascript" src="../js/board/view.js"></script>
 	 
 

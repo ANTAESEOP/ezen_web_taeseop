@@ -18,9 +18,8 @@ import model.dto.postDto;
 
 @WebServlet("/post/postlist")
 public class postlist extends HttpServlet {
-	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		JSONObject boards = new JSONObject();
 		ArrayList<postDto> list = postDao.getInstance().postlist();
 		JSONArray array = new JSONArray();
 		for(int i = 0 ; i<list.size(); i++) {
@@ -35,7 +34,7 @@ public class postlist extends HttpServlet {
 		
 		// 응답
 		response.setCharacterEncoding("UTF-8");
-		response.getWriter().print(array);
+		response.getWriter().print(boards);
 	}
 	
 	private static final long serialVersionUID = 1L;

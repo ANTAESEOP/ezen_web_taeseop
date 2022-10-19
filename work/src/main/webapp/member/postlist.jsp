@@ -15,11 +15,12 @@
 				<th> 작성자 </th>
 				<th> 작성일 </th>
 				<th> 조회수 </th>
+			</tr>
 		</table>
 			
 			
 			
-			
+	<script type="text/javascript" src="../js/post/postlist.js"></script>	
 			
 </body>
 </html>

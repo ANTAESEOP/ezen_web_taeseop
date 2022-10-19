@@ -18,12 +18,19 @@ import model.dto.dto.BoardDto;
 @WebServlet("/board/list")
 public class list extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// 1. 요청 X
 		
+		request.setCharacterEncoding("UTF-8");
+		/////////////////////// 검색처리 ///////////////////////
+		String key			= request.getParameter("key");
+		String keyword		= request.getParameter("keyword");
+		System.out.println("key");
+		System.out.println("keyword");
+		/////////////////////// 검색처리 ///////////////////////	
+
 		// 1. 페이지당 게시물 수
 		int listsize = Integer.parseInt(request.getParameter("listsize") );
 		// 2. 전체 게시물 수
-		int totalsize = BoardDao.getInstance().gettotalsize();
+		int totalsize = BoardDao.getInstance().gettotalsize( key , keyword);
 		
 		// 3. 전체 페이지 수 계산
 		int totalpage = 0;
@@ -59,8 +66,9 @@ public class list extends HttpServlet {
 		// * 페이징 처리에 필요한 정보 담든 jsonobject
 		JSONObject boards = new JSONObject();
 		System.out.println(listsize);
-		// 2. db
-		ArrayList<BoardDto> list = BoardDao.getInstance().getlist(startrow , listsize);
+		// 2. 전체 게시물 호출 vs 검색된 게시물 호출
+		ArrayList<BoardDto> list = BoardDao.getInstance().getlist(startrow , listsize , key , keyword);
+		// ** arraylist ---> jsonarray 변환[ js에서 쓸려고 ]
 		JSONArray array = new JSONArray();
 		for(int i = 0 ; i<list.size(); i++) {
 			JSONObject object = new JSONObject();
@@ -73,10 +81,11 @@ public class list extends HttpServlet {
 		}
 		
 	// 4.
-		boards.put( "totlepage" , totalpage );
-		boards.put( "data", array );
-		boards.put("startbtn", startbtn);
-		boards.put("endbtn", endbtn);
+		boards.put( "totlepage" , totalpage );	// 전체 페이지 수
+		boards.put( "data", array );			// 게시물 리스트
+		boards.put("startbtn", startbtn);		// 버튼의 시작 번호
+		boards.put("endbtn", endbtn);			// 버튼의 끝 번호
+		boards.put("totalsize", totalsize);		// 전체
 		
 	// 3. 응답 o
 	response.setCharacterEncoding("UTF-8");
@@ -85,23 +94,12 @@ public class list extends HttpServlet {
 		
 	}
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+
     public list() {
         super();
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);

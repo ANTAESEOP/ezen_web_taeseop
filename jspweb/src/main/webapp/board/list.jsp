@@ -15,7 +15,55 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 	<div class="webbox">
 		<a href="write.jsp"> 글쓰기 </a>
-		<!-- JSP로 테이블 표시   [ 서블릿,js 제외한 ] -->
+	
+		<!-- 5. 게시물 수 표시 -->
+		<div> 게시물 수 : <span class="totalsize"></span></div>
+		
+		<!-- 6. 화면에 표시할 게시물 수  -->
+		<div>
+			<select class="listsize" onchange="blistsize()">
+				<option value="5"> 5 </option>
+				<option value="10"> 10 </option>
+				<option value="15"> 15 </option>
+				<option value="20"> 20 </option>
+			</select>
+		</div>
+		
+		
+		
+		
+		<table class="btalbe table">
+			<tr>
+				<th> 번호 </th> <th> 제목 </th> <th>작성자</th> 
+				<th> 작성일 </th> <th> 조회수 </th>
+			</tr>
+		</table>
+		
+		<div class="pagebox">
+		
+		
+		
+		</div>
+		
+		<!--  4. 검색처리 -->
+		<div>
+			<select class="key">
+				<option value="b.btitle">제목</option>
+				<option value="b.content">내용</option>
+				<option value="m.mid">작성자</option>
+			</select>
+			<input class="keyword" type="text" placeholder="검색어">
+			<button type="button" onclick="bsearch()">검색</button>
+		</div>
+		
+		
+	</div>
+	
+	
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="../js/board/list.js"></script>
+
+	<!-- JSP로 테이블 표시   [ 서블릿,js 제외한 ] -->
 <%-- 		<table>
 			<tr>
 				<th> 번호 </th> <th> 제목 </th> <th> 작성자 </th>
@@ -36,26 +84,9 @@
 			}			// <%= 표현식(호출) 
 			%>
 		</table> --%>
+
 		
-		<!-- JS로 테이블 표시    [ HTML(JSP) --- JS ---- 서블릿 --- DAO ] -->
-		<table class="btalbe table">
-			<tr>
-				<th> 번호 </th> <th> 제목 </th> <th>작성자</th> 
-				<th> 작성일 </th> <th> 조회수 </th>
-			</tr>
-		</table>
-		
-		<div class="pagebox">
-		
-		
-		
-		</div>
-		
-	</div>
-	
-	
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-	<script type="text/javascript" src="../js/board/list.js"></script>
+
 
 
 </body>

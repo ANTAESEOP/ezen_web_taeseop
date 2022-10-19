@@ -37,7 +37,6 @@ function bfiledelete(){
 		$.ajax({
 			url : "/jspweb/board/bfiledelete",
 			success : function(re){
-				alert( re )
 				if( re === 'true'){
 					alert('첨부파일 삭제')
 					// * 현재페이지 새로고침 : location.reload()
@@ -57,7 +56,6 @@ function bupdate(){
 	
 	let form = document.querySelector('form')
 	let formdata = new FormData(form)
-	console.log(formdata)
 	
 	$.ajax({
 		url : "/jspweb/board/bupdate", 
