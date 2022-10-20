@@ -49,7 +49,7 @@
 			</ul> <!-- 상단 메뉴 end -->
 		</div>
 		<ul class="hd_menu"> <!-- 하단 헤더 -->
-			<li><a href="#">인기</a></li>
+			<li><a href="/jspweb/board/chatting.jsp">채팅방</a></li>
 			<li><a href="#">상의</a></li>
 			<li><a href="#">아우터</a></li>
 			<li><a href="#">바지</a></li>
