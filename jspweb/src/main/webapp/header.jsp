@@ -4,13 +4,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>WEB STORY</title>
 
-	<!-- 사용자 정의 css 호출 -->
+	<!-- 뷰포트 -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- 부트스트랩 css -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+	
+	<!-- 사용자 정의 css 호출  -->
 	<link rel="stylesheet" href="/jspweb/css/header.css">
-	<meta name="viewport" content="width=device-width,initial-scale=1">
-			<!-- font awesome 글머리 기호[ 아이콘 ] -->
-	<script src="https://kit.fontawesome.com/b8a7fea4d4.js"></script>
+	<!-- 폰트어썸 [ 아이콘 ] -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
 	
 	
 </head>
@@ -67,6 +71,11 @@
 			</li>
 		</ul>
 	</div>
+	
+	
+		<!-- 부트스트랩 js -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+	
 	<!-- JQUERY 라이브러리 -->
 	<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 	
