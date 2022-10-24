@@ -54,7 +54,7 @@
 		</div>
 		<ul class="hd_menu"> <!-- 하단 헤더 -->
 			<li><a href="/jspweb/board/chatting.jsp">채팅방</a></li>
-			<li><a href="#">상의</a></li>
+			<li><a href="/jspweb/board/api.jsp">공공데이터</a></li>
 			<li><a href="#">아우터</a></li>
 			<li><a href="#">바지</a></li>
 			<li><a href="#">원피스</a></li>
@@ -83,12 +83,12 @@
 </html>
 
 <!-- 
-	레이아웃 , 박스권 , 구역
-	<div> : block [ 한 줄 차지 ]
-		vs
-	<span> : inline
-	
-	<ul>
+	헤더파일 [ 모든 페이지에서 호풀되는 파일 ] 
+		경로 :
+				/jspweb/board.chatting.jsp
+				/ : 최 상위 경로 = localhost:8080
+			j
+				현재경로
 
 
  -->
