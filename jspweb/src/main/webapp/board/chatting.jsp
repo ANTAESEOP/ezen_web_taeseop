@@ -12,7 +12,7 @@
 </head>
 <body>
 
-	<%@include file="../header.jsp" %>
+	<%@include file="../../header.jsp"%>
 	<input type="hidden" class="mid" value="<%=loginid%>"> <!-- 채팅에 접속한 회원아이디 보관 -->
 	<div class="container"> <!-- 부트스트랩 css는 미리 만들어진 class 사용 -->
 	

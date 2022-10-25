@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+/* 여백제거 */
+*{padding: 0px ; margin: 0px;}
+
+.sidebar{
+   background-color:  black;
+   color: white;
+   width: 200px;    /* 가로사이즈 */
+   position:  absolute;
+   top: 0;       /* 위에서부터 0 만큼 떨어진다 */
+   bottom: 0;       /* 아래에서 0만큼 */
+   left: -170px;    /* 메뉴바숨기기 */
+   transition : 1s;
+}
+/* 사이드바 목록 */
+.side_menu{ padding:  50px;}/* 사이드바 목록 */
+.side_item{margin: 30px 0px;}
+.side_menu li{ list-style: none;}
+.side_item a{ color: white; text-decoration: none;} /* 링크 색상 , 링크 밑줄 제거*/
+.sidebar h1{ margin: 20px;}
