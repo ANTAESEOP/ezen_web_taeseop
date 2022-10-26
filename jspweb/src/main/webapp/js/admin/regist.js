@@ -1,24 +1,26 @@
+// 1. 등록 버튼을 눌렀을때
 function regist(){
-	/* 첨부파일이 포함되어 있을 경우 */
+	/* 첨부파일이 포함되어 있을경우 */
 	let form = document.querySelector('form')
 	let formdata = new FormData( form )
 	$.ajax({
-		url : "http://localhost:8080/jspweb/admin/regist",
-		data: formdata ,
-		/* form 전송이 첨부파일 경우 */ // [ type , processData , contentType ] 이 3개는 세트 write.js 참고.
-		type : "post",
-		processData : false,
-		contentType : false, //
-		success : function(re) {
-			console.log( re ) 
-		}
+		url : "/jspweb/admin/regist" , 
+		data : formdata , 
+		/* form 전송이 첨부파일 경우 [ 아래 3가지 필수 ] write.js 참고 */
+		type : "POST" ,
+		processData : false ,
+		contentType : false ,
+		success: function( re ){ 
+			if(re === 'true'){
+				location.href="	"
+			}
+		 }
 	})
 }
 
 // 2. 첨부파일 등록(변경)했을때 미리보기
 let pimg = document.querySelector('#pimg')
 pimg.addEventListener( 'change' , function(e){ // e : 첨부파일 input change 이벤트 // e : event 객체 ( 이벤트정보 [ target , data 등 ] )
-	alert('이미지 등록')	
 	// 1. js 파일 클래스 [ FileReader() ]
 	let file = new FileReader() 			// 객체 생성
 		console.log( file )
@@ -43,14 +45,14 @@ function pcategoryview(){
 function pcategoryadd(){
 	$.ajax({
 		url :"/jspweb/board/pcategory",
-		type : "post",
+		type : "POST",
 		data: {"pcname" : document.querySelector('#pcname').value},
 		success: function( re ) {
 			if(re ==='true'){
 				alert('카테고리 등록 성공')
 				document.querySelector('.pcategoryaddbox').innerHTML = ''
 				getpcategory()
-			}else {alert('카테고리 등록 시류ㅐ')}
+			}else {alert('카테고리 등록 실패')}
 			}
 	})
 }	
@@ -58,19 +60,16 @@ function pcategoryadd(){
 getpcategory()
 function getpcategory(){
 	$.ajax({
-		url :"/jspweb/board/pcategory",
-		type : "get",
-		success : function(re){
+		url : "/jspweb/board/pcategory" , 
+		type : "get" , 
+		success:function(re){
 			let json = JSON.parse(re)
-			console.log( json )
-			
-			let html =''
-			for(let i = 0 ; i<json.length ; i++){
-				let category = json[i]
-				html += '<input type ="radio" name="pcno" value='+category.pcno+'>'+category.pcname;
+			let html = ''
+			for( let i = 0 ; i<json.length ; i++ ){
+				let category = json[i];
+				html += '<input type="radio" name="pcno" value='+category.pcno+'>'+category.pcname;
 			}
-			
-			
+			document.querySelector(".pcategorybox").innerHTML = html;
 		}
 	})
 }

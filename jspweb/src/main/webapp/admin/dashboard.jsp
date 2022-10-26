@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 <link href="/jspweb/css/dashboard.css" rel="stylesheet">
 </head>
 <body>
@@ -25,7 +26,7 @@
          <h1> ADMIN MENU </h1>
          <ul class="side_menu">
             <li class="side_item"><a onclick="pagechange('regist.jsp')">제품등록</a>
-            <li class="side_item"><a href="#">제품목록</a>
+            <li class="side_item"><a onclick="pagechange('list.jsp')">제품목록</a>
             <li class="side_item"><a href="#">재고관리</a>
             <li class="side_item"><a href="#">주문관리</a>
             <li class="side_item"><a href="#">매출관리</a>
@@ -43,8 +44,12 @@
       </div>
       
       
-		<script type="text/javascript" src="../js/admin/dashboard.js"></script>
+		
 		<!-- JQUERY 라이브러리 -->
 		<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<!-- 부트스트랩 -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+		<!-- 사용자정의 -->
+		<script src="../js/admin/dashboard.js" type="text/javascript" ></script>
 </body>
 </html>

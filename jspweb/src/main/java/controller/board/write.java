@@ -79,7 +79,6 @@ public class write extends HttpServlet {
 			System.out.println(btitle); // 확인
 		String bcontent = multi.getParameter("bcontent");
 			System.out.println(bcontent); // 확인
-		
 		// * 어떤 파일을 업로드 했는지 db에 저장 할 첨부파일 경로 / 이름 
 		String bfile = multi.getFilesystemName("bfile");
 			System.out.println(bfile);

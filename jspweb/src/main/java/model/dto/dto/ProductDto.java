@@ -6,7 +6,7 @@ package model.dto.dto;
 		private String pname ;
 		private String pcomment; 
 		private int pprice ;
-		private float  pdiscount ;
+		private float pdiscount ;
 		private byte pactive ;
 		private String pimg ;
 		private String pdate ;

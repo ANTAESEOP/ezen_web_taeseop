@@ -13,7 +13,6 @@ let mainbox = document.querySelector("#mainbox")
 
 ///////// 본문 전환 이벤트 /////////
 function pagechange( page ){ // load 특정 태그 새로고침 api
-	alert(page)
 	// 특정 태그에 해당 파일 로드 [ jquery ]
 	$('#mainbox').load( page )
 }
