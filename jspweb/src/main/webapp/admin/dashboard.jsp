@@ -16,7 +16,6 @@
           if(mid == null || !mid.equals("admin")){
              response.sendRedirect("../index.jsp");
           }
-          
     %>
        <!-- marquee : 텍스트 슬라이드(전광판) /scrollamount :속도-->
        <marquee scrollamount="10"> 공지사항 표시되는 위치 </marquee>
@@ -27,7 +26,7 @@
          <ul class="side_menu">
             <li class="side_item"><a onclick="pagechange('regist.jsp')">제품등록</a>
             <li class="side_item"><a onclick="pagechange('list.jsp')">제품목록</a>
-            <li class="side_item"><a href="#">재고관리</a>
+            <li class="side_item"><a onclick="pagechange('stock.jsp')">재고관리</a>
             <li class="side_item"><a href="#">주문관리</a>
             <li class="side_item"><a href="#">매출관리</a>
             <li class="side_item"><a href="#">회원목록</a>

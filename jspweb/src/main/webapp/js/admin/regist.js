@@ -12,7 +12,7 @@ function regist(){
 		contentType : false ,
 		success: function( re ){ 
 			if(re === 'true'){
-				location.href="	"
+				location.href="dashboard.jsp"
 			}
 		 }
 	})

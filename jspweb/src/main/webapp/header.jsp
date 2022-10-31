@@ -20,11 +20,10 @@
 <body>
 
 	<div class="webbox"> <!-- 웹페이지 박스권 -->
-		
 		<div class ="hd_top"> <!-- 상단메뉴 -->
 			<div> <!--  로고 -->	
 				<span class="hd_title">
-				<a href="/jspweb/index.jsp">Phone Shop </a> 
+				<a href="/jspweb/index.jsp" class="nav-link">Phone Shop </a> 
 				</span>
 			</div>
 
@@ -37,33 +36,33 @@
 			<ul class="hd_sub">
 			<!-- 비로그인 메뉴 -->
 			<%if(loginid == null){%>
-				<li> <a href="/jspweb/member/login.jsp">로그인</a> </li>
-				<li> <a href="/jspweb/member/signup.jsp">회원가입</a> </li>
+				<li> <a href="/jspweb/member/login.jsp" class="nav-link">로그인</a> </li>
+				<li> <a href="/jspweb/member/signup.jsp" class="nav-link">회원가입</a> </li>
 			<% }else if(loginid.equals("admin")){ %>
-               <li> <a href="/jspweb/admin/dashboard.jsp">관리자</a></li>   <!-- 관리자 페이지 -->
+               <li> <a href="/jspweb/admin/dashboard.jsp" class="nav-link">관리자</a></li>   <!-- 관리자 페이지 -->
                    
 				
 			<!--  로그인 메뉴 세션  -->
 			<% }else{ %>
 				<li> <%=loginid %> 님 안녕하세요 </li>
-				<li> <a href="/jspweb/member/logout.jsp"> 로그아웃 </a> </li>
+				<li> <a href="/jspweb/member/logout.jsp" class="nav-link"> 로그아웃 </a> </li>
 			<%}		%>
 			
 			<!-- 공통 메뉴  -->
-				<li> <a href="/jspweb/member/info.jsp">마이쇼핑</a> </li>
-				<li> <a href="/jspweb/board/list.jsp">고객센터</a> </li>			
+				<li> <a href="/jspweb/member/info.jsp" class="nav-link">마이쇼핑</a> </li>
+				<li> <a href="/jspweb/board/list.jsp" class="nav-link">고객센터</a> </li>			
 			</ul> <!-- 상단 메뉴 end -->
 		</div>
 		<ul class="hd_menu"> <!-- 하단 헤더 -->
-			<li><a href="/jspweb/board/chatting.jsp">채팅방</a></li>
-			<li><a href="/jspweb/board/api.jsp">공공데이터</a></li>
-			<li><a href="#">아우터</a></li>
-			<li><a href="#">바지</a></li>
-			<li><a href="#">원피스</a></li>
-			<li><a href="#">스커트</a></li>
-			<li><a href="#">스니커즈</a></li>
-			<li><a href="#">신발</a></li>
-			<li><a href="#">가방</a></li>
+			<li><a href="/jspweb/board/chatting.jsp" class="nav-link">채팅방</a></li>
+			<li><a href="/jspweb/board/api.jsp" class="nav-link">공공데이터</a></li>
+			<li><a href="#" class="nav-link">아우터</a></li>
+			<li><a href="#" class="nav-link">바지</a></li>
+			<li><a href="#" class="nav-link">원피스</a></li>
+			<li><a href="#" class="nav-link">스커트</a></li>
+			<li><a href="#" class="nav-link">스니커즈</a></li>
+			<li><a href="#" class="nav-link">신발</a></li>
+			<li><a href="#" class="nav-link">가방</a></li>
 			<li class="searchbox">
 				<span>
 					<input>
