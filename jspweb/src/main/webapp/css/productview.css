@@ -1,0 +1,86 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+img{ width: 100%} /* 상위 태그의 사이즈 반큼 비율 */
+
+.infobox{/* 상품정보 박스원 위쪽테두리 , 왼쪽여백 */
+	border-top : 1px solid black;
+	margin-left : 3%;
+}
+
+.pname{ /* 제품명 */
+	margin-top : 5%;
+	font-family :'GmarketSansMedium';
+}
+
+.pcomment{ /* 제품 설명 */
+	font-size: 9px;
+}
+
+.pricebox{ margin : 5% 0%; }
+
+.pdiscount{ /* 할인율 */
+	font-family :'GmarketSansMedium';
+	color : red; font-size:20px;
+	padding-right : 3%;
+}
+
+.pprice{
+	text-decoration: line-through; /* 중간 실선 */
+	color : #999999;
+	padding-right : 3%;
+}
+.psale{ /* 판매가 */
+	font-family :'GmarketSansMedium';
+	color: red; font-size:20px;
+}
+.info_t{
+	margin : 5% 0%; 
+	font-size : 15px;
+}
+select{
+	width : 60%;
+	height : 30px;
+	border : 1px solid #999999;
+}
+
+.select_t{margin: 5% 0%;}
+
+.amount_btn{/* 수량 증가 , 감소 버튼 */
+	display : block;
+	background-color: white; /* 투명색 */
+	font-size : 5px;
+	padding: 0px 8px;
+	border : 1px #999999 soild;
+}
+.cancel_btn{/* 선택 옵션 제거 */
+	background-color : white;
+	font-size : 15px;
+	border : none;
+	padding : 5px;
+}
+
+.pointbox{ font-size : 5px; color:#999999}
+
+.totalprice{
+	text-align : right; /* 오른쪽 배치 */
+	font-size : 20px;
+	font-family : 'GmarketSansMedium'
+}
+.btnbox button{
+	background-color: white;	/* 배경색 */
+	border: 1px solid #999999;	/* 테두리 */
+	width: 30%;					/* 가로 사이즈 [ 상위 태그 사이즈 내 비율 ]*/
+	padding: 20px 10px; 		/* 버튼 내 안쪽 여백 = 버튼 사이즈*/
+	margin-right: 2%;
+}
+
+
+
