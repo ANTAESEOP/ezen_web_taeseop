@@ -5,6 +5,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import model.dto.dto.CartDto;
+import model.dto.dto.OrderDto;
 import model.dto.dto.PcategoryDto;
 import model.dto.dto.ProductDto;
 import model.dto.dto.StockDto;
@@ -197,14 +198,10 @@ public class ProductDao extends Dao {
 				+ "	from productstock pst , (select psno from productsize where pno = "+pno+" and psize = '"+psize+"') sub "
 				+ "	where pst.psno = sub.psno and pcolor = '"+pcolor+"'), "
 				+ "  "+mno+""
-				+ " );";
+				+ " )";
 		try {
-			ps = con.prepareStatement(sql);
-			ps.executeUpdate();
-			return true;
-		} catch (Exception e) {System.out.println(e);}
-
-		return false;
+			ps = con.prepareStatement(sql); ps.executeUpdate(); return true;
+		} catch (Exception e) {System.out.println(e);}return false;
 	}
 	
 	// 12. 회원번호의 모든 장바구니 호출
@@ -243,6 +240,35 @@ public class ProductDao extends Dao {
 		} catch (Exception e) {System.out.println();}
 		return list;
 	}
+	// 13.
+	public boolean setOrder(ArrayList<OrderDto> list )  {
+		String sql = "insert into porder (oname , ophone , oddress , oquest , mno) values ( ? , ? , ? , ? , ?)";
+		try {
+			ps = con.prepareStatement(sql , Statement.RETURN_GENERATED_KEYS);
+			ps.setString(1 ,list.get(0).getOname() );
+			ps.setString(2 ,list.get(0).getOphone() );
+			ps.setString(3 ,list.get(0).getOddress() );
+			ps.setString(4 ,list.get(0).getOquest() );
+			ps.setInt(5 ,list.get(0).getMno() );
+			ps.executeUpdate();	
+			rs = ps.getGeneratedKeys();
+			while(rs.next() ) {
+				try { 
+					int ono = rs.getInt(1); // pk 호출 
+					sql = "insert into porderdetail (odamount , odprice , odactive , pstno , ono) values (? , ? , ? , ? , ?)";
+					for(int i = 0 ; i<list.size(); i++) {
+					ps = con.prepareStatement(sql); 
+					ps.setInt(1, list.get(i).getOdamount());
+					ps.setInt(2, list.get(i).getOdpirce());
+					ps.setInt(3, list.get(i).getOdactive());
+					ps.setInt(4, list.get(i).getPstno());
+					ps.setInt(5, ono);
+					ps.executeUpdate();	return true;
+					}
+				}catch (Exception e) {System.out.println("오류1"+ e);}
+			}
+		}catch (Exception e) {System.out.println("오류2" + e);} return false;	
+	}	
 }
 
 

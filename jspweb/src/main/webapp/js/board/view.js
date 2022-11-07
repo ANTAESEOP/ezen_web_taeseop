@@ -21,13 +21,14 @@ function bview(){
 			//			../board/filedown
 			
 			if(board.file !==  null){ // null , undefiend , 0
-				let filelink = `<a href="/jspweb/board/filedown?bfile=${board.bfile}">${board.bfile}</a>`
+				let filelink = '<a href="../board/filedown?bfile='+board.bfile+'">'+board.bfile+'</a>'
 				// let filelink = '<a href="/jspweb/board/filedown?bfile='+board.bfile+'">'+board.bfile+'</a>'
 				
 				// ' ' : 전체 문자열 처리
 				// " " : 전체 문자열내 문자열 구분
 				document.querySelector('.bfile').innerHTML = filelink;
 			}
+			console.log( board.btnaction )
 			let btnbox = document.querySelector('.btnbox')
 			
 			if(board.btnaction){
@@ -89,12 +90,12 @@ function rwrite(){
 	let rcontent = document.querySelector(".rcontent").value;
 	$.ajax({
 		url : "/jspweb/reply/rwrite",
-		data : {"rcontent" : rcontent , "type" : 0 } ,
+		data : {"rcontent" : rcontent , "type" : "reply" } ,
 		type : "POST",/* HTTP 메소드 : 1. GET방식 = 기본값 2. POST방식 */
 		success : function( re ) {
 			if ( re == 1){
 				alert('댓글 작성 완료 !')
-				location.reload();
+				rlist()
 			}else if (re == 0){
 				alert('로그인 후 작성 가능합니다.')
 				location.href = '../member/login.jsp';

@@ -20,7 +20,6 @@ import model.dto.dto.BoardDto;
 public class bupdate extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		// 1. 서버 내 업로드 폴더 경로 찾기
 		String uploadpath = request.getSession().getServletContext().getRealPath("/upload");
 		// 2. MultipartRequest 객체
@@ -28,6 +27,7 @@ public class bupdate extends HttpServlet {
 				request, 
 				uploadpath,
 				1024*1024*10,
+				"UTF-8",
 				new DefaultFileRenamePolicy() );
 		
 		// 3. 요청
@@ -55,8 +55,6 @@ public class bupdate extends HttpServlet {
 		}
 		// 5. 결과 반환
 		response.getWriter().print(result);
-
-		
 	}
 
 	

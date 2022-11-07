@@ -17,7 +17,6 @@ public class info extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 1. 요청 [ 세션에 로그인 정보 호출  ]
 		String mid = (String)request.getSession().getAttribute("mid");
-		System.out.println("1.");
 		// 2. db
 		MemberDto dto =	MemberDao.getInstance().getinfo( mid );
 		System.out.println(dto.getMid());

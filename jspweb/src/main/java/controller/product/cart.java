@@ -1,6 +1,8 @@
 package controller.product;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,6 +16,7 @@ import org.json.simple.parser.ParseException;
 
 import model.dto.dao.MemberDao;
 import model.dto.dao.ProductDao;
+import model.dto.dto.CartDto;
 
 
 @WebServlet("/product/cart")
@@ -63,8 +66,35 @@ public class cart extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-
+		
+		// 1. 요청
+		int mno = MemberDao.getInstance().getMno(
+				(String)request.getSession()
+				.getAttribute("mid") ) ; // object -> 문자열 형번환
+		
+		// 2. db처리
+		ArrayList<CartDto> list = 
+				new ProductDao().getCart(mno);
+		
+		JSONArray array = new JSONArray();
+		// * 형변환
+		for(CartDto dto : list) {
+			JSONObject object = new JSONObject();
+			object.put("cartno", dto.getCartno());
+			object.put("pstno", dto.getPstno());
+			object.put("pname", dto.getPname());
+			object.put("pimg", dto.getPimg());
+			object.put("pprice", dto.getPprice());
+			object.put("pdiscount", dto.getPdiscount());
+			object.put("pcolor", dto.getPcolor());
+			object.put("psize", dto.getPsize());
+			object.put("amount", dto.getAmount());
+			array.add(object);
+		}
+		// 3. 응답
+		response.setCharacterEncoding("UTF-8");
+		response.getWriter().print( array );
+		
 	}
 
 

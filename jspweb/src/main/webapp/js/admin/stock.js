@@ -25,16 +25,16 @@ let pselect = document.querySelector('.pselect') 	// 제품 선택 상자
 let rows = document.querySelectorAll('.rows') 		// 재고 등록 td 행 목록
 
 // 1-1 카테고리목록에서 선택를 클릭했을떄 제품출력 메소드 호출
-cselect.addEventListener( 'click' , e => {
+cselect.addEventListener('click', e => {
 	let pcno = e.currentTarget.value // 선택된 카테고리 번호
-	getproduct( pcno ); // 선택된 카테고리 번호 인수로 전달 
+	getproduct(pcno); // 선택된 카테고리 번호 인수로 전달 
 })
 
 // 1-2 제품 목록에서 선택을 했을때 재고 등록 html 구성
-pselect.addEventListener( 'click' , e => {
+pselect.addEventListener('click', e => {
 	let pno = e.currentTarget.value // 선택된 카테고리 번호
-	productlist.forEach( p => { 
-		if( p.pno == pno ){ // 해당 제품의 번호와 선택된 제품의번호와 같으면
+	productlist.forEach(p => {
+		if (p.pno == pno) { // 해당 제품의 번호와 선택된 제품의번호와 같으면
 			rows[0].innerHTML = p.pcno
 			rows[1].innerHTML = p.pno
 			rows[2].innerHTML = p.pname
@@ -45,32 +45,32 @@ pselect.addEventListener( 'click' , e => {
 
 /*1. 페이지 열리면 모든 카테고리 select 넣어주기 */
 getcategory()
-function getcategory(){
+function getcategory() {
 	$.ajax({
-		url : "/jspweb/board/pcategory" , 
-		type : 'get',
-		success : function( re ){
-			let categorylist = JSON.parse( re ) // 선언
+		url: "/jspweb/board/pcategory",
+		type: 'get',
+		success: function(re) {
+			let categorylist = JSON.parse(re) // 선언
 			// 배열객체.forEach( 반복변수명[아무거나] , 인덱스 , 배열객체명 => { 실행코드 } )
 			let html = '<option> 카테고리 선택 </option>'
-			categorylist.forEach( c => {
+			categorylist.forEach(c => {
 				html += `<option value=${c.pcno}> ${c.pcname}</option>`
 			})
 			cselect.innerHTML = html
-		}			
+		}
 	})
 }
 /*2. 선택된 카테고리별 제품리스트를 select 넣어주기 */
-function getproduct( pcno ){
+function getproduct(pcno) {
 	$.ajax({
-		url : "/jspweb/admin/regist" , 
-		data : { "type" : 1 , "option" : "all"  } ,
-		type : 'get',
-		success : function( re ){
-			productlist = JSON.parse( re ) // 대입 
+		url: "/jspweb/admin/regist",
+		data: { "type": 1, "option": "all" },
+		type: 'get',
+		success: function(re) {
+			productlist = JSON.parse(re) // 대입 
 			let html = ''
-			productlist.forEach( p => {
-				if( p.pcno == pcno ){ // 해당제품의 카테고리번호 와 선택된 카테고리 번호 와 같으며
+			productlist.forEach(p => {
+				if (p.pcno == pcno) { // 해당제품의 카테고리번호 와 선택된 카테고리 번호 와 같으며
 					html += `<option value=${p.pno}> ${p.pname}</option>`
 				}
 			})
@@ -80,44 +80,44 @@ function getproduct( pcno ){
 }
 
 // 3. 재고 등록 버튼을 눌렀을떄 
-function setstock(){
+function setstock() {
 	// 1. 등록할 데이터 구성[객체화]한다.  vs form [ *첨부파일 있을경우 ]
 	let info = {
-		psize : document.querySelector('.psize').value , 
-		pcolor :  document.querySelector('.pcolor').value , 
-		pstock :  document.querySelector('.pstock').value ,
-		pno :  rows[1].innerHTML 
+		psize: document.querySelector('.psize').value,
+		pcolor: document.querySelector('.pcolor').value,
+		pstock: document.querySelector('.pstock').value,
+		pno: rows[1].innerHTML
 	}
 	$.ajax({
-		url : "/jspweb/admin/stock" , 
-		type : "post",		// post method
-		data : info , 
-		success : re => { 
-			if( re == 'true' ){ alert('재고등록성공'); getstock(); }
-			else{ alert('재고등록실패'); }
+		url: "/jspweb/admin/stock",
+		type: "post",		// post method
+		data: info,
+		success: re => {
+			if (re == 'true') { alert('재고등록성공'); getstock(); }
+			else { alert('재고등록실패'); }
 		}
 	})
 }
 // 4. 제품별 재고 출력 
-function getstock(){
+function getstock() {
 	$.ajax({
-		url : "/jspweb/admin/stock" ,
-		type : "get" ,		// get method
-		data : { "pno" : rows[1].innerHTML  } ,
-		success : function(re){
+		url: "/jspweb/admin/stock",
+		type: "get",		// get method
+		data: { "pno": rows[1].innerHTML },
+		success: function(re) {
 			let json = JSON.parse(re)
-			let html = 
-  					'<tr>'+
-						'<th> 사이즈 </th>'+
-						'<th> 색상 </th>'+
-						'<th> 재고 </th>'+
-						'<th> 비고 </th>'+
-					'</tr>';
-			for(let i = 0 ; i<json.length; i++){
-			html += '<tr>'+
-						'<th>'+json[i].psize+'</th>'+
-						'<th>'+json[i].pcolor+'</th>'+
-						'<th>'+json[i].pstock+'</th>'+
+			let html =
+				'<tr>' +
+				'<th> 사이즈 </th>' +
+				'<th> 색상 </th>' +
+				'<th> 재고 </th>' +
+				'<th> 비고 </th>' +
+				'</tr>';
+			for (let i = 0; i < json.length; i++) {
+				html += '<tr>' +
+					'<th>' + json[i].psize + '</th>' +
+					'<th>' + json[i].pcolor + '</th>' +
+					'<th>' + json[i].pstock + '</th>' +
 					'</tr>';
 			}
 			document.querySelector(".ttable").innerHTML = html;

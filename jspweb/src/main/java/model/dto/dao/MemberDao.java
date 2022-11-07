@@ -90,7 +90,7 @@ public class MemberDao extends Dao {
 	}
 	// 6. 회원정보 호출 
 	public MemberDto getinfo( String mid ) {
-		MemberDto dto = new MemberDto();
+		MemberDto dto = null;
 		String sql ="select * from member where mid = ?";
 		try {
 			ps =  con.prepareStatement(sql);
@@ -98,14 +98,12 @@ public class MemberDao extends Dao {
 			rs = ps.executeQuery();
 			if( rs.next() ) {
 				// 1. 풀생성자 
-				dto.setMno(rs.getInt(1));
-				dto.setMid(rs.getString(2));
-				dto.setMname(rs.getString(3));
-				dto.setMphone(rs.getString(5));
-				dto.setMemail(rs.getString(6));
-				dto.setMaddress(rs.getString(7));
-				dto.setMdate(rs.getString(8));
-				dto.setMno(rs.getInt(9));								
+				dto = new MemberDto(
+						rs.getInt( 1 ) , rs.getString( 2 ) , null ,
+						rs.getString( 4 ), rs.getString( 5 ) ,
+						rs.getString( 6 ), rs.getString( 7 ), 
+						rs.getString( 8 ) , rs.getInt( 9 ) 
+						);
 			}
 			// 2. 반환
 			return dto;

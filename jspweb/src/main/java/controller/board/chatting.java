@@ -1,19 +1,17 @@
 package controller.board;
 
-import java.io.IOException;
-import java.util.Hashtable;
-import java.util.Vector;
-
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.websocket.*;
 import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
 
 import org.json.simple.JSONObject;
+
+import java.io.IOException;
+import java.util.Hashtable;
+
+import javax.websocket.*;
+
+
+
 
 // @WebServlet("/board/chatting")	// 서블릿 URL 만들기
 @ServerEndpoint("/chatting/{mid}")
@@ -38,8 +36,8 @@ public class chatting{
 	// 1. 접속
 	@OnOpen	// 웹소켓이 들어왔을때 
 	public void OnOpen( Session session , @PathParam("mid") String mid  ) throws IOException {
-		sendmsg(  jsonAlarm(mid+"님이 들어왔습니다.") );
 		clients.put(session, mid); // **서버소켓에서 해당 세션 저장하기
+		sendmsg(  jsonAlarm(mid+"님이 들어왔습니다.") );
 	}
 	// 2. 나가기 
 	@OnClose // 웹소켓을 나갔을때 
